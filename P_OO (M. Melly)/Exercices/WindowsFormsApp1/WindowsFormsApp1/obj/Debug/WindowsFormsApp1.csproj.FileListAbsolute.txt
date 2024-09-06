@@ -1,0 +1,10 @@
+C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Exercices\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Exercices\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Exercices\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Exercices\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Exercices\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Exercices\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Exercices\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Exercices\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Exercices\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Exercices\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
