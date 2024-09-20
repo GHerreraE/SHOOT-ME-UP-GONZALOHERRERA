@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32.SafeHandles;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -15,27 +16,30 @@ namespace ShootMeUp_GHE
         static void Main(string[] args)
         {
            
-            Console.CursorVisible = false;
-            var ship = new Vaisseau(55,28,3);
+            Console.CursorVisible = false;          //desactiver le courseur
+            var vaiseau = new Vaisseau(50,28,3);    //création du vaissea
+            var missile = new Missile(50, 28);      //création du missile
+            
 
-
-            //Boucle de jeu
+            //boucle de jeu
             while (true)
             {
- 
-                //Print objects
-                ship.Dessiner();
+                //designer le vaisseau
+                missile.Dessiner();
+                
 
-                //Compute next coordinates
+                //si une touche est pressée, la position du vaisseau change
                 if(Console.KeyAvailable)
                 {
-                    var key = Console.ReadKey(true);
-                    ship.Move(key);
+                    ConsoleKeyInfo key = Console.ReadKey(true);
                     
+                    //mouvement du vaisseau
+                    vaiseau.Move(key);
+                    
+                      
                 }
                 
-                //Waits for sync FPS
-                Thread.Sleep(30);
+                
                 
             }
         }
