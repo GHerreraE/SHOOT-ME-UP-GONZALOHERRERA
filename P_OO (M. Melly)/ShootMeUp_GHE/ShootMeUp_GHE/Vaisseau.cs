@@ -8,7 +8,7 @@ namespace ShootMeUp_GHE
         /// <summary>
         /// variable pour la forme du vaisseau
         /// </summary>
-        private string[] _FormeVaisseau;
+        private string _FormeVaisseau = "<<|O|>>";
 
         /// <summary>
         /// variable pour la position du vaisseau par rapport l'axe X
@@ -41,16 +41,7 @@ namespace ShootMeUp_GHE
         {
             _PositionX = x;
             _PositionY = y;
-            _Vies = vies;
-            _ShotMissile= false;
-
-            _FormeVaisseau = new string[]
-            {
-                "   A  ",
-                "  /A\\  ",
-                " /_A_\\ ",
-                "        "
-            };
+            _Vies = vies;        
         }
 
         /// <summary>
@@ -83,7 +74,7 @@ namespace ShootMeUp_GHE
         /// <summary>
         /// retourne les caractères de la forme du vaisseau
         /// </summary>
-        public string[] FormeVaisseau
+        public string FormeVaisseau
         {
             get { return _FormeVaisseau; }
             set { _FormeVaisseau = value; }
@@ -103,11 +94,8 @@ namespace ShootMeUp_GHE
         /// </summary>
         public void Dessiner()
         {
-            for (int i = 0; i < _FormeVaisseau.Length; i++)
-            {
-                Console.SetCursorPosition(_PositionX, _PositionY + i); // Positionner chaque ligne
-                Console.Write(_FormeVaisseau[i]);
-            }
+            Console.SetCursorPosition(_PositionX, _PositionY); // Positionner chaque ligne
+            Console.Write(_FormeVaisseau);
         }
 
         /// <summary>
@@ -115,11 +103,8 @@ namespace ShootMeUp_GHE
         /// </summary>
         public void Clear()
         {
-            for (int i = 0; i < _FormeVaisseau.Length; i++)
-            {
-                Console.SetCursorPosition(_PositionX, _PositionY + i); // Effacer chaque ligne
-                Console.Write(new string(' ', _FormeVaisseau[i].Length)); // Remplir de blancs
-            }
+            Console.SetCursorPosition(_PositionX, _PositionY); // Effacer chaque ligne
+            Console.Write("       "); // Remplir de blancs
         }
 
         /// <summary>
@@ -127,29 +112,34 @@ namespace ShootMeUp_GHE
         /// </summary>
         public void Move(ConsoleKeyInfo key)
         {
+            //si le vaisseau a plus que 0 de vie
             if (_Vies > 0)
             {
+                //si la fleche gauche est pressée et la position du vaisseau ne depasse pas la fenetre
                 if (key.Key == ConsoleKey.LeftArrow && _PositionX > 0)
                 {
                     Clear();
                     _PositionX--;
                 }
 
-                if (key.Key == ConsoleKey.RightArrow && _PositionX < Console.WindowWidth - _FormeVaisseau[0].Length)
+                //si la fleche droite est pressée et la position du vaisseau ne depasse pas la fenetre pour l'expandir
+                if (key.Key == ConsoleKey.RightArrow && _PositionX < Console.WindowWidth - _FormeVaisseau.Length)
                 {
                     Clear();
                     _PositionX++;
                 }
 
-                if (key.Key == ConsoleKey.Spacebar && !_ShotMissile)
+                // si la touche espace est prese et que auccun missile a ete tire
+                if (key.Key == ConsoleKey.Spacebar && (_ShotMissile == false))
                 {
-                    _ShotMissile = true;
+                    _ShotMissile = true; //tirer
                 }
 
-                Dessiner();
+                Dessiner(); //appel de la méthode
             }
             else
             {
+                //efface l'écran
                 Clear();
             }
         }

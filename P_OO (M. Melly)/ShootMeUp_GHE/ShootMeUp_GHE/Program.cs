@@ -17,16 +17,15 @@ namespace ShootMeUp_GHE
         {
            
             Console.CursorVisible = false;          //desactiver le courseur
-            var vaiseau = new Vaisseau(50,28,3);    //création du vaissea
-            var missile = new Missile(50, 28);      //création du missile
+            var vaiseau = new Vaisseau(50,28,3);    //création du vaisseau
+            
             
 
             //boucle de jeu
             while (true)
             {
                 //designer le vaisseau
-                missile.Dessiner();
-                
+                vaiseau.Dessiner();
 
                 //si une touche est pressée, la position du vaisseau change
                 if(Console.KeyAvailable)
@@ -36,11 +35,15 @@ namespace ShootMeUp_GHE
                     //mouvement du vaisseau
                     vaiseau.Move(key);
                     
-                      
+
+
+
+
+
                 }
                 
-                
-                
+
+
             }
         }
     }

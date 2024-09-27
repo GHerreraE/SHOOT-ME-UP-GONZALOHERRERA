@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -56,7 +57,6 @@ namespace ShootMeUp_GHE
             set { _positionY = value; }
         }
 
-        
         /// <summary>
         /// méthode pour designer le missile
         /// </summary>
@@ -75,28 +75,39 @@ namespace ShootMeUp_GHE
             Console.Write(" ");//remplacer le symbole par un espace vide
         }
 
-        public void Update(bool PlayerAttack)
+        /// <summary>
+        /// methode pour la mouvement du missile
+        /// </summary>
+        /// <param name="ShootMissile"></param>
+        public void Shooter(bool shootMissile)
         {
-            // jusqu'a la fin de la fenetre - 1 le missile est dessine, si non il est efface  
-            if (_positionY < (Console.WindowHeight - 1))
+            //tant que la position Y ne dépasse pas les limites de la console
+            while (_positionY > 0 && _positionY < (Console.WindowHeight - 1))
             {
-                Clear();// effacer la trace du missile 
-                if (PlayerAttack == true)
+                Clear(); //efface le missile
+
+                //si le missile est affiché, la position Y decrement pour faire monter le missile
+                if (shootMissile == true)
                 {
-                    _positionY--;// decrementation de Y pour que le missile monte
-                    
+                    _positionY--;
                 }
-                else
+                
+                Dessiner(); //affiche le missile
+
+                Thread.Sleep(50); //delai avant de reafficher le missile
+
+                //si le missile sort de la fenêtre ou s'il ne doit plus tirer, on sort de la boucle
+                if (_positionY <= 0 || _positionY >= Console.WindowHeight - 1)
                 {
-                    _positionY++;
+                    break;
                 }
-                Dessiner();// afficher le missile
             }
-            else
-            {
-                Clear();// effacer le missile
-            }
+
+            Clear(); //efface le missile
         }
 
+
     }
+
 }
+
