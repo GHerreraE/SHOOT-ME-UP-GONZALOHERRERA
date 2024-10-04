@@ -1,42 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShootMeUp_GHE
 {
     internal class Game
     {
+        private readonly Vaisseau _vaisseau;
+        private bool _isRunning;
 
-        public void ShootPlayerMissile()
+        public Game()
         {
-            Missile playerMissile;
-            playerMissile = null;
-            Vaisseau player = new Vaisseau(x: Console.WindowWidth / 2, y: Console.WindowHeight - 2, vies: 3);
+            Console.Clear();
+            _vaisseau = new Vaisseau(Console.WindowWidth / 2, Console.WindowHeight - 1, 3); // Position initiale du vaisseau
+            _isRunning = true;
+        }
 
-            // verifier si un missil est tirer
-            if (player.ShotMissile)
+        public void UpdateGame()
+        {
+            // Gestion de la saisie utilisateur
+            if (Console.KeyAvailable)
             {
-                // si il n'y a pas de missile 
-                if (playerMissile == null)
+                ConsoleKeyInfo key = Console.ReadKey(true); // Lire la touche sans l'afficher
+                if (key.Key == ConsoleKey.Escape) // Quitter le jeu
                 {
-                    // creer un nouveau missile 
-                    playerMissile = new Missile(player.PositionX + player.FormeVaisseau.Length / 2, player.PositionY - 1);
+                    _isRunning = false;
+                    return;
                 }
-                else
+                else if (key.Key == ConsoleKey.Spacebar) // Tirer un missile
                 {
-                    playerMissile.Shooter(true);// faire bouger le missile   
-                    // si le missile atteint la hauteur max
-                    if (playerMissile.PositionY < 2)
-                    {
-                        playerMissile.Clear();// effacer la trace du missile 
-                        playerMissile = null;// detruir le missile
-                        player.ShotMissile = false;// pas de missile tirer
-                    }
-                    
+                    _vaisseau.ShotMissile();
                 }
+
+                _vaisseau.Move(key); // Déplacer le vaisseau
             }
         }
+
+        public bool IsRunning => _isRunning; // Propriété pour vérifier si le jeu est en cours
     }
 }

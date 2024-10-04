@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\py78dal\\Documents\\GitHub\\SHOOT-ME-UP-GONZALOHERRERA\\P_OO (M. Melly)\\ShootMeUp_GHE\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E8CC6C2A-752F-4132-A057-3B58848CCD29}|ShootMeUp_GHE\\ShootMeUp_GHE.csproj|C:\\Users\\py78dal\\Documents\\GitHub\\SHOOT-ME-UP-GONZALOHERRERA\\P_OO (M. Melly)\\ShootMeUp_GHE\\shootmeup_ghe\\missile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8CC6C2A-752F-4132-A057-3B58848CCD29}|ShootMeUp_GHE\\ShootMeUp_GHE.csproj|solutionrelative:shootmeup_ghe\\missile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E8CC6C2A-752F-4132-A057-3B58848CCD29}|ShootMeUp_GHE\\ShootMeUp_GHE.csproj|C:\\Users\\py78dal\\Documents\\GitHub\\SHOOT-ME-UP-GONZALOHERRERA\\P_OO (M. Melly)\\ShootMeUp_GHE\\shootmeup_ghe\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8CC6C2A-752F-4132-A057-3B58848CCD29}|ShootMeUp_GHE\\ShootMeUp_GHE.csproj|solutionrelative:shootmeup_ghe\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E8CC6C2A-752F-4132-A057-3B58848CCD29}|ShootMeUp_GHE\\ShootMeUp_GHE.csproj|c:\\users\\py78dal\\documents\\github\\shoot-me-up-gonzaloherrera\\p_oo (m. melly)\\shootmeup_ghe\\shootmeup_ghe\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E8CC6C2A-752F-4132-A057-3B58848CCD29}|ShootMeUp_GHE\\ShootMeUp_GHE.csproj|C:\\Users\\py78dal\\Documents\\GitHub\\SHOOT-ME-UP-GONZALOHERRERA\\P_OO (M. Melly)\\ShootMeUp_GHE\\shootmeup_ghe\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E8CC6C2A-752F-4132-A057-3B58848CCD29}|ShootMeUp_GHE\\ShootMeUp_GHE.csproj|solutionrelative:shootmeup_ghe\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E8CC6C2A-752F-4132-A057-3B58848CCD29}|ShootMeUp_GHE\\ShootMeUp_GHE.csproj|C:\\Users\\py78dal\\Documents\\GitHub\\SHOOT-ME-UP-GONZALOHERRERA\\P_OO (M. Melly)\\ShootMeUp_GHE\\shootmeup_ghe\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8CC6C2A-752F-4132-A057-3B58848CCD29}|ShootMeUp_GHE\\ShootMeUp_GHE.csproj|solutionrelative:shootmeup_ghe\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E8CC6C2A-752F-4132-A057-3B58848CCD29}|ShootMeUp_GHE\\ShootMeUp_GHE.csproj|c:\\users\\py78dal\\documents\\github\\shoot-me-up-gonzaloherrera\\p_oo (m. melly)\\shootmeup_ghe\\shootmeup_ghe\\missile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8CC6C2A-752F-4132-A057-3B58848CCD29}|ShootMeUp_GHE\\ShootMeUp_GHE.csproj|solutionrelative:shootmeup_ghe\\missile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E8CC6C2A-752F-4132-A057-3B58848CCD29}|ShootMeUp_GHE\\ShootMeUp_GHE.csproj|C:\\Users\\py78dal\\Documents\\GitHub\\SHOOT-ME-UP-GONZALOHERRERA\\P_OO (M. Melly)\\ShootMeUp_GHE\\shootmeup_ghe\\vaisseau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,19 +26,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Game.cs",
               "DocumentMoniker": "C:\\Users\\py78dal\\Documents\\GitHub\\SHOOT-ME-UP-GONZALOHERRERA\\P_OO (M. Melly)\\ShootMeUp_GHE\\ShootMeUp_GHE\\Game.cs",
               "RelativeDocumentMoniker": "ShootMeUp_GHE\\Game.cs",
               "ToolTip": "C:\\Users\\py78dal\\Documents\\GitHub\\SHOOT-ME-UP-GONZALOHERRERA\\P_OO (M. Melly)\\ShootMeUp_GHE\\ShootMeUp_GHE\\Game.cs",
               "RelativeToolTip": "ShootMeUp_GHE\\Game.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAcwA4AAAAhAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-27T13:38:44.075Z"
+              "WhenOpened": "2024-09-27T13:38:44.075Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -48,19 +49,20 @@
               "RelativeDocumentMoniker": "ShootMeUp_GHE\\Vaisseau.cs",
               "ToolTip": "C:\\Users\\py78dal\\Documents\\GitHub\\SHOOT-ME-UP-GONZALOHERRERA\\P_OO (M. Melly)\\ShootMeUp_GHE\\ShootMeUp_GHE\\Vaisseau.cs",
               "RelativeToolTip": "ShootMeUp_GHE\\Vaisseau.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHwAAABPAAAA",
+              "ViewState": "AQIAADEAAAAAAAAAAAAmwFUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T12:37:22.502Z"
+              "WhenOpened": "2024-09-13T12:37:22.502Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Missile.cs",
               "DocumentMoniker": "C:\\Users\\py78dal\\Documents\\GitHub\\SHOOT-ME-UP-GONZALOHERRERA\\P_OO (M. Melly)\\ShootMeUp_GHE\\ShootMeUp_GHE\\Missile.cs",
               "RelativeDocumentMoniker": "ShootMeUp_GHE\\Missile.cs",
               "ToolTip": "C:\\Users\\py78dal\\Documents\\GitHub\\SHOOT-ME-UP-GONZALOHERRERA\\P_OO (M. Melly)\\ShootMeUp_GHE\\ShootMeUp_GHE\\Missile.cs",
               "RelativeToolTip": "ShootMeUp_GHE\\Missile.cs",
-              "ViewState": "AQIAAEQAAAAAAAAAAAAAAGIAAABAAAAA",
+              "ViewState": "AQIAABMAAAAAAAAAAAA4wDcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-13T14:25:19.457Z",
               "EditorCaption": ""
@@ -73,7 +75,7 @@
               "RelativeDocumentMoniker": "ShootMeUp_GHE\\Program.cs",
               "ToolTip": "C:\\Users\\py78dal\\Documents\\GitHub\\SHOOT-ME-UP-GONZALOHERRERA\\P_OO (M. Melly)\\ShootMeUp_GHE\\ShootMeUp_GHE\\Program.cs",
               "RelativeToolTip": "ShootMeUp_GHE\\Program.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABUAAAAMAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAUAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-13T12:28:48.21Z",
               "EditorCaption": ""

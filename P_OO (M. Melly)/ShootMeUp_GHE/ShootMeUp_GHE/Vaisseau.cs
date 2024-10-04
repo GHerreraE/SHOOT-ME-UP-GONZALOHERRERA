@@ -1,154 +1,85 @@
 ﻿using System;
-using System.Windows.Input;
+using System.Threading;
 
 namespace ShootMeUp_GHE
 {
     internal class Vaisseau
     {
-        /// <summary>
-        /// variable pour la forme du vaisseau
-        /// </summary>
-        private string _FormeVaisseau = "<<|O|>>";
+        private string _formeVaisseau = "<<|O|>>";
+        private int _positionX;
+        private int _positionY;
+        private int _vies;
+        private bool _shotMissile = false;
 
-        /// <summary>
-        /// variable pour la position du vaisseau par rapport l'axe X
-        /// </summary>
-        private int _PositionX;
+        private const int ShipSpeed = 15; // Vitesse du vaisseau (en millisecondes)
 
-        /// <summary>
-        /// variable pour la position du vaisseau par rapport l'axe Y
-        /// </summary>
-        private int _PositionY;
-
-        /// <summary>
-        /// variable pour le nombre de vies du vaisseau
-        /// </summary>
-        private int _Vies;
-
-        /// <summary>
-        /// variable pour tirer un missile
-        /// </summary>
-        private bool _ShotMissile = false;
-
-        /// <summary>
-        /// constructeur du vaisseau
-        /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <param name="vies"></param>
-        /// <returns></returns>
         public Vaisseau(int x, int y, int vies)
         {
-            _PositionX = x;
-            _PositionY = y;
-            _Vies = vies;        
+            _positionX = x;
+            _positionY = y;
+            _vies = vies;
         }
 
-        /// <summary>
-        /// retourne la position de l'axe Y
-        /// </summary>
         public int PositionY
         {
-            get { return _PositionY; }
-            set { _PositionY = value; }
+            get { return _positionY; }
+            set { _positionY = value; }
         }
 
-        /// <summary>
-        /// retourne la position de l'axe X
-        /// </summary>
         public int PositionX
         {
-            get { return _PositionX; }
-            set { _PositionX = value; }
+            get { return _positionX; }
+            set { _positionX = value; }
         }
 
-        /// <summary>
-        /// retourne la valeur de la vie du vaisseau
-        /// </summary>
         public int Vies
         {
-            get { return _Vies; }
-            set { _Vies = value; }
+            get { return _vies; }
+            set { _vies = value; }
         }
 
-        /// <summary>
-        /// retourne les caractères de la forme du vaisseau
-        /// </summary>
         public string FormeVaisseau
         {
-            get { return _FormeVaisseau; }
-            set { _FormeVaisseau = value; }
+            get { return _formeVaisseau; }
+            set { _formeVaisseau = value; }
         }
 
-        /// <summary>
-        /// retourne le boolean du shot du missile
-        /// </summary>
         public bool ShotMissile
         {
-            get { return _ShotMissile; }
-            set { _ShotMissile = value; }
+            get { return _shotMissile; }
+            set { _shotMissile = value; }
         }
 
-        /// <summary>
-        /// méthode pour dessiner le vaisseau
-        /// </summary>
         public void Dessiner()
         {
-            Console.SetCursorPosition(_PositionX, _PositionY); // Positionner chaque ligne
-            Console.Write(_FormeVaisseau);
+            Console.SetCursorPosition(_positionX, _positionY);
+            Console.Write(_formeVaisseau);
         }
 
-        /// <summary>
-        /// méthode pour nettoyer la console pour chaque déplacement du vaisseau
-        /// </summary>
         public void Clear()
         {
-            Console.SetCursorPosition(_PositionX, _PositionY); // Effacer chaque ligne
-            Console.Write("       "); // Remplir de blancs
+            Console.SetCursorPosition(_positionX, _positionY);
+            Console.Write(new string(' ', _formeVaisseau.Length)); // Effacer le vaisseau
         }
 
-        /// <summary>
-        /// méthode pour le mouvement du vaisseau
-        /// </summary>
         public void Move(ConsoleKeyInfo key)
         {
-            //si le vaisseau a plus que 0 de vie
-            if (_Vies > 0)
+            if (_vies > 0)
             {
-                //si la fleche gauche est pressée et la position du vaisseau ne depasse pas la fenetre
-                if (key.Key == ConsoleKey.LeftArrow && _PositionX > 0)
+                if (key.Key == ConsoleKey.LeftArrow && _positionX > 0)
                 {
                     Clear();
-                    _PositionX--;
+                    _positionX--;
                 }
-
-                //si la fleche droite est pressée et la position du vaisseau ne depasse pas la fenetre pour l'expandir
-                if (key.Key == ConsoleKey.RightArrow && _PositionX < Console.WindowWidth - _FormeVaisseau.Length)
+                else if (key.Key == ConsoleKey.RightArrow && _positionX < Console.WindowWidth - _formeVaisseau.Length)
                 {
                     Clear();
-                    _PositionX++;
+                    _positionX++;
                 }
 
-                // si la touche espace est prese et que auccun missile a ete tire
-                if (key.Key == ConsoleKey.Spacebar && (_ShotMissile == false))
-                {
-                    _ShotMissile = true; //tirer
-                }
-
-                Dessiner(); //appel de la méthode
-            }
-            else
-            {
-                //efface l'écran
-                Clear();
+                Dessiner();
+                Thread.Sleep(ShipSpeed); // Limiter la vitesse de rafraîchissement
             }
         }
-
     }
-
-
-
-
-
 }
-
