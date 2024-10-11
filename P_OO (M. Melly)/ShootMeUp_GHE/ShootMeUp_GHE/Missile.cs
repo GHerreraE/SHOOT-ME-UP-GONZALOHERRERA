@@ -1,55 +1,98 @@
 ﻿using System;
-using System.Threading;
 
-namespace ShootMeUp_GHE
+internal class Missile
 {
-    internal class Missile
+    /// <summary>
+    /// possition du vaisseau par rapport l'axe X
+    /// </summary>
+    private int _positionX;
+
+    /// <summary>
+    /// possition du vaisseau par rapport l'axe Y
+    /// </summary>
+    private int _positionY;
+
+    /// <summary>
+    /// constante pour la forme du missile 
+    /// </summary>
+    private string _formeMissile = "│";
+
+    /// <summary>
+    /// constructeur du missile
+    /// </summary>
+    /// <param name="x">possition sur X</param>
+    /// <param name="y">position sur Y</param>
+    public Missile(int x, int y)
     {
-        private int _positionX;
-        private int _positionY;
-        private readonly string _formeMissile = "|";
-
-        private const int MissileSpeed = 25; // Vitesse du missile (en millisecondes)
-
-        public Missile(int positionX, int positionY)
-        {
-            _positionX = positionX;
-            _positionY = positionY;
-        }
-
-        public int PositionX
-        {
-            get { return _positionX; }
-            set { _positionX = value; }
-        }
-
-        public int PositionY
-        {
-            get { return _positionY; }
-            set { _positionY = value; }
-        }
-
-        public void Dessiner()
-        {
-            Console.SetCursorPosition(_positionX, _positionY);
-            Console.Write(_formeMissile);
-        }
-
-        public void Clear()
-        {
-            Console.SetCursorPosition(_positionX, _positionY);
-            Console.Write(" "); // Effacer le missile
-        }
-
-        public void Shooter()
-        {
-            if (_positionY > 0)
-            {
-                Clear(); // Effacer l'ancienne position du missile
-                _positionY--; // Déplacer le missile vers le haut
-                Dessiner(); // Dessiner le missile à la nouvelle position
-                Thread.Sleep(MissileSpeed); // Limiter la vitesse de rafraîchissement du missile
-            }
-        }
+        _positionX = x;
+        _positionY = y;
     }
+
+    /// <summary>
+    /// recuperer la position sur l'axe X
+    /// </summary>
+    public int PositionX
+    {
+        get { return _positionX; }
+        set { _positionX = value; }
+    }
+
+    /// <summary>
+    /// recuperer la position sur l'axe Y
+    /// </summary>
+    public int PositionY
+    {
+        get { return _positionY; }
+        set { _positionY = value; }
+    }
+
+    /// <summary>
+    /// méthode pour dessiner le missile  
+    /// </summary>
+    public void Draw()
+    {
+        Console.SetCursorPosition(_positionX, _positionY);
+        Console.Write(_formeMissile);
+    }
+
+    /// <summary>
+    /// méthode pour effacer le missile pendat qu'il bouge
+    /// </summary>
+    public void Clear()
+    {
+        Console.SetCursorPosition(_positionX, _positionY);
+        Console.Write(" ");
+    }
+
+    /// <summary>
+    /// méthode pour le mouvement du missile 
+    /// </summary>
+    public void Move(bool JoeurMissile)
+    {
+        Clear();
+
+        // si la position de l'axe Y ne depasse pas la fenêtre -1  
+        if ((_positionY < (Console.WindowHeight - 1)))
+        {
+            // efface la trace du missile
+            Clear();
+
+            // si le joeur lance un missile
+            if (JoeurMissile == true)
+            {
+                // decrementation de l'axe Y pour que le missile monte
+                _positionY--;
+            }
+
+            // appel à la méthode pour afficher le missile
+            Draw();
+        }
+        else
+        {
+            // effacer le missile
+            Clear();
+        }
+        
+    }
+
 }
