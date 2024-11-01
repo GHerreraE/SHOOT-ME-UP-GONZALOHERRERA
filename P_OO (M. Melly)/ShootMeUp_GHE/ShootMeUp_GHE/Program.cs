@@ -24,7 +24,7 @@ namespace ShootMeUp_GHE
                 // Dessiner tous les missiles et les déplacer
                 for (int i = missiles.Count - 1; i >= 0; i--)
                 {
-                    missiles[i].Draw();
+                    missiles[i].Dessiner();
                     missiles[i].Move(true);
 
                     // Vérifier si le missile est sorti de l'écran
@@ -54,11 +54,7 @@ namespace ShootMeUp_GHE
                     }
                 }
 
-                // Gérer la logique de la partie (par exemple, vérifier les vies, la fin de partie, etc.)
-                if (vaisseau.Vies <= 0)
-                {
-                    gameRunning = false; // Terminer le jeu si le vaisseau n'a plus de vies
-                }
+              
 
                 // Ajouter une pause pour ralentir le jeu
                 System.Threading.Thread.Sleep(20); // Ajuster la vitesse du jeu

@@ -28,7 +28,9 @@ namespace ShootMeUp_GHE
         /// <summary>
         /// boolean pour tirer un missile 
         /// </summary>
-        private bool  _shot = false;
+        private bool _shot = false;
+
+        private Missile _missile;
 
         /// <summary>
         /// constructeur du vaisseau
@@ -127,7 +129,7 @@ namespace ShootMeUp_GHE
 
                 // si la touche gauche est pressée et la position de l'axe Y ne depasse pas la fenêtre
                 if (key.Key == ConsoleKey.RightArrow && _positionX < Console.WindowWidth - _formeVaisseau.Length)
-                { 
+                {
                     //efface le missile
                     Clear();
 
@@ -149,7 +151,37 @@ namespace ShootMeUp_GHE
                 //efface l'écran
                 Clear();
             }
+
         }
+
+        public void MiseEtat()
+        {
+            if (_vies > 0)  // si il reste des points de vie
+            {
+                // si une balle est tirée on la met à jour
+                if (_missile != null)
+                {
+                    // si la balle est null, on la réinitialise
+                    if (!_missile.Move())
+                    {
+                        _missile = null;
+                    }
+                }
+                this.Dessiner();  // affiche le joueur
+            }
+            else  // si il n y pas de points de vie
+            {
+                Clear();  // cache le joueur
+            }
+        }
+
+        public void RestoreMissile()
+        {
+            _missile = null;
+            _shot = false;
+        }
+
     }
+
 
 }
