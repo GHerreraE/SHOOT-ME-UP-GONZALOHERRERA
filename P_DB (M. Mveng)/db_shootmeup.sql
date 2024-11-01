@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db:3306
--- Généré le : lun. 28 oct. 2024 à 13:31
+-- Généré le : ven. 01 nov. 2024 à 07:16
 -- Version du serveur : 8.0.30
 -- Version de PHP : 8.0.27
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `db_shootmeup`
 --
+CREATE DATABASE db_shootmeup;
+USE db_shootmeup;
 
 -- --------------------------------------------------------
 
