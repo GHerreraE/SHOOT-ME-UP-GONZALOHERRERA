@@ -1,7 +1,0 @@
-C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Exercices\snail_ghe\snail_ghe\obj\Debug\snail_ghe.csproj.AssemblyReference.cache
-C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Exercices\snail_ghe\snail_ghe\obj\Debug\snail_ghe.csproj.CoreCompileInputs.cache
-C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Exercices\snail_ghe\snail_ghe\bin\Debug\snail_ghe.exe.config
-C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Exercices\snail_ghe\snail_ghe\bin\Debug\snail_ghe.exe
-C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Exercices\snail_ghe\snail_ghe\bin\Debug\snail_ghe.pdb
-C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Exercices\snail_ghe\snail_ghe\obj\Debug\snail_ghe.exe
-C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Exercices\snail_ghe\snail_ghe\obj\Debug\snail_ghe.pdb

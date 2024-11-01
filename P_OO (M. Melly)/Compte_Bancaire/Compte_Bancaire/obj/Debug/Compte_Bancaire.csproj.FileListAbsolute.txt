@@ -1,7 +1,0 @@
-C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Compte_Bancaire\Compte_Bancaire\bin\Debug\Compte_Bancaire.exe.config
-C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Compte_Bancaire\Compte_Bancaire\bin\Debug\Compte_Bancaire.exe
-C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Compte_Bancaire\Compte_Bancaire\bin\Debug\Compte_Bancaire.pdb
-C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Compte_Bancaire\Compte_Bancaire\obj\Debug\Compte_Bancaire.csproj.AssemblyReference.cache
-C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Compte_Bancaire\Compte_Bancaire\obj\Debug\Compte_Bancaire.csproj.CoreCompileInputs.cache
-C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Compte_Bancaire\Compte_Bancaire\obj\Debug\Compte_Bancaire.exe
-C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Compte_Bancaire\Compte_Bancaire\obj\Debug\Compte_Bancaire.pdb

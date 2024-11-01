@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 internal class Missile
 {
@@ -16,6 +17,9 @@ internal class Missile
     /// constante pour la forme du missile 
     /// </summary>
     private string _formeMissile = "│";
+
+    private DateTime lastMoveTime;
+    private static int moveInterval = 30;
 
     /// <summary>
     /// constructeur du missile
@@ -49,7 +53,7 @@ internal class Missile
     /// <summary>
     /// méthode pour dessiner le missile  
     /// </summary>
-    public void Draw()
+    public void Dessiner()
     {
         Console.SetCursorPosition(_positionX, _positionY);
         Console.Write(_formeMissile);
@@ -67,32 +71,50 @@ internal class Missile
     /// <summary>
     /// méthode pour le mouvement du missile 
     /// </summary>
-    public void Move(bool JoeurMissile)
+    public bool Move()
     {
+        // cache la balle
         Clear();
 
-        // si la position de l'axe Y ne depasse pas la fenêtre -1  
-        if ((_positionY < (Console.WindowHeight - 1)))
+        // si la balle est toujours à l'intérieur de la zone jouable (Y > 0)
+        if (_positionY > 0)
         {
-            // efface la trace du missile
-            Clear();
-
-            // si le joeur lance un missile
-            if (JoeurMissile == true)
-            {
-                // decrementation de l'axe Y pour que le missile monte
-                _positionY--;
-            }
-
-            // appel à la méthode pour afficher le missile
-            Draw();
+            // déplace la balle vers le haut
+            _positionX--;
+            // affiche la balle à sa nouvelle position
+            Dessiner();
+            // ajoute un délai de 30 milisecondes
+            Thread.Sleep(30);
+            // retourne true car la balle existe toujours
+            return true;
         }
         else
+            // si la balle atteint le bord elle "meurt"
+            return false;
+    }
+
+    public bool MoveDown()
+    {
+        // vérifie si le délai est fini depuis le dernier mouvement
+        if ((DateTime.Now - lastMoveTime).TotalMilliseconds >= moveInterval)
         {
-            // effacer le missile
-            Clear();
+            Clear(); // efface la balle
+
+            _positionY++; // incremente la position y
+            lastMoveTime = DateTime.Now; // met à jour le dernier mouvement
+
+            // si la balle est toujours dans la console
+            if (_positionY < Console.WindowHeight)
+            {
+                Move(); // affiche la balle dans la nouvelle position
+                return true;
+            }
+            else
+            {
+                return false; // false si la balle a depasser la console
+            }
         }
-        
+        return true; // si le délai est fini alors il retourne true
     }
 
 }
