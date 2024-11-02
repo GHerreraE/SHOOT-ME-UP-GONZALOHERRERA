@@ -5,3 +5,7 @@ C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\Sho
 C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\ShootMeUp_GHE\ShootMeUp_GHE\bin\Debug\ShootMeUp_GHE.pdb
 C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\ShootMeUp_GHE\ShootMeUp_GHE\obj\Debug\ShootMeUp_GHE.exe
 C:\Users\py78dal\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\ShootMeUp_GHE\ShootMeUp_GHE\obj\Debug\ShootMeUp_GHE.pdb
+C:\Users\gonza\OneDrive\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\ShootMeUp_GHE\ShootMeUp_GHE\obj\Debug\ShootMeUp_GHE.csproj.AssemblyReference.cache
+C:\Users\gonza\OneDrive\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\ShootMeUp_GHE\ShootMeUp_GHE\obj\Debug\ShootMeUp_GHE.csproj.CoreCompileInputs.cache
+C:\Users\gonza\OneDrive\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\ShootMeUp_GHE\ShootMeUp_GHE\obj\Debug\ShootMeUp_GHE.exe
+C:\Users\gonza\OneDrive\Documents\GitHub\SHOOT-ME-UP-GONZALOHERRERA\P_OO (M. Melly)\ShootMeUp_GHE\ShootMeUp_GHE\obj\Debug\ShootMeUp_GHE.pdb

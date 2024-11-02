@@ -18,8 +18,8 @@ internal class Missile
     /// </summary>
     private string _formeMissile = "│";
 
-    private DateTime lastMoveTime;
-    private static int moveInterval = 30;
+    private DateTime lastTime;
+    private static int mouvementInterval = 30;
 
     /// <summary>
     /// constructeur du missile
@@ -96,12 +96,12 @@ internal class Missile
     public bool MoveDown()
     {
         // vérifie si le délai est fini depuis le dernier mouvement
-        if ((DateTime.Now - lastMoveTime).TotalMilliseconds >= moveInterval)
+        if ((DateTime.Now - lastTime).TotalMilliseconds >= mouvementInterval)
         {
             Clear(); // efface la balle
 
             _positionY++; // incremente la position y
-            lastMoveTime = DateTime.Now; // met à jour le dernier mouvement
+            lastTime = DateTime.Now; // met à jour le dernier mouvement
 
             // si la balle est toujours dans la console
             if (_positionY < Console.WindowHeight)

@@ -14,9 +14,11 @@ namespace ShootMeUp_GHE
         private int _positionY;
         private int _vies;
         private int _nbScore;
-        private bool _missileEtat;
+        private bool _missileEtat = false;
         private static Random random = new Random();
         public Missile _missilesEnnemi;
+        private int compteurShot = 300;
+        private int compteur = 0;
 
 
 
@@ -103,28 +105,27 @@ namespace ShootMeUp_GHE
 
         public void Move(int direction)
         {
+            //effacer l'ennemi
             Clear();
-
-            // Tableau de mouvements : droite, bas, gauche, haut
-            int[] mouvementX = { 1, 0, -1, 0 }; // Changement de position X
-            int[] mouvementY = { 0, 1, 0, -1 }; // Changement de position Y
-
-            // Appliquer le mouvement
-            _positionX += mouvementX[direction];
-            _positionY += mouvementY[direction];
-
-            // Vérification des limites de la fenêtre
-            _positionX = Clamp(_positionX, 0, Console.WindowWidth - 1);
-            _positionY = Clamp(_positionY, 0, Console.WindowHeight - 1);
-            Dessiner();
+            //si cest 0 il bouge a droite
+            if (direction == 0)
+            {
+                _positionX++;
+            }
+            //si cest 1 il bouge en bas  
+            else if (direction == 1)
+            {
+                _positionY++;
+            }
+            //si c'est 2 il bouge a gauche
+            else if (direction == 2)
+            {
+                _positionY--;
+            }
+            Dessiner();// montrer l'ennemi a sa nouvelle position
         }
 
-        private int Clamp(int value, int min, int max)
-        {
-            if (value < min) return min;
-            if (value > max) return max;
-            return value;
-        }
+
 
         public void TirerMissile()
         {
@@ -170,6 +171,35 @@ namespace ShootMeUp_GHE
                     _missileEtat = false; //ennemi ne tire plus
                 }
             }
+        }
+
+        public void MoveTwo()
+        {
+            //si le compteur est plus haut que le cooldown
+            if (compteur >= compteurShot)
+            {
+                int shootChance = random.Next(0, 450); //variable qui prend la valeur mise au hasard
+
+                //si le nombre est 1 est que l'ennemi est pas entrain de tirer
+                if (shootChance < 1 && _missilesEnnemi == null)
+                {
+                    TirerMissile(); // alors l ennemi tire 
+                }
+
+                compteur = 0; //mettre le compteur a 0
+            }
+            else
+            {
+                compteur++; //sinon incrementer
+            }
+
+            UpdateEnemyBullet();
+        }
+
+        public void ResetEnemyBullet()
+        {
+            _missilesEnnemi = null;  // la balle est nulle
+            _missileEtat = false;  // le joueur ne tire pas
         }
     }
 }

@@ -40,7 +40,7 @@ namespace ShootMeUp_GHE
             set { _vie = value; }
         }
 
-        public Obstacles(int PositionX, int PositionY, int vie)
+        public Obstacles(int PositionX, int PositionY, int vie = 6)
         {
             _positionX = PositionX;
             _positionY = PositionY; 
@@ -67,6 +67,14 @@ namespace ShootMeUp_GHE
                 Clear();
             }
 
+        }
+
+        /// <summary>
+        /// méthode pour effacer l'obstacle
+        /// </summary>
+        private void clearObstacle()
+        {
+            Clear();
         }
     }
 }
