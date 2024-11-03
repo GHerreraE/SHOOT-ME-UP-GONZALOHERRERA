@@ -1,205 +1,196 @@
-﻿using System;
+﻿/******************************************************************************
+** PROGRAMME  Ennemi.cs                                                      **
+**                                                                           **
+** Lieu      : ETML - section informatique                                   **
+** Auteur    : Gonzalo Javier Herrera Egoavil                                **
+** Date      : 02.11.2024                                                    **
+**                                                                           **
+** Modifications                                                             **
+**   Auteur  :                                                               **
+**   Version :                                                               **
+**   Date    :                                                               **
+**   Raisons :                                                               **
+**                                                                           **
+******************************************************************************/
+
+/******************************************************************************
+** DESCRIPTION                                                               **
+** Cette classe représente les ennemis dans le jeu. Chaque ennemi possède    **
+** une forme visuelle, une position, des points de vie et la capacité de tirer**
+** des missiles. La classe gère le déplacement, le tir, et les collisions    **
+** des missiles ennemis avec le vaisseau ou les obstacles. Lorsque l'ennemi  **
+** est détruit, il est retiré de l'affichage.                                **
+******************************************************************************/
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShootMeUp_GHE
 {
-    internal class Ennemi
+    public class Ennemi
     {
+        private string _formeEnnemi;               // Forme visuelle de l'ennemi
+        private int _positionX;                    // Position X de l'ennemi dans la console
+        private int _positionY;                    // Position Y de l'ennemi dans la console
+        private int _vies;                         // Points de vie actuels de l'ennemi
+        private int _nbScore;                      // Points rapportés par l'ennemi en cas de destruction
+        private int _direction = 1;                // Direction actuelle de déplacement (1: droite, -1: gauche)
+        private static Random aleatoire = new Random(); // Générateur aléatoire pour les tirs
+        private Missile _missileEnnemi;            // Missile tiré par l'ennemi
 
-        private string _formeEnnemi;
-        private int _positionX;
-        private int _positionY;
-        private int _vies;
-        private int _nbScore;
-        private bool _missileEtat = false;
-        private static Random random = new Random();
-        public Missile _missilesEnnemi;
-        private int compteurShot = 300;
-        private int compteur = 0;
+        // Propriétés pour accéder aux attributs de l'ennemi
+        public string FormeEnnemi => _formeEnnemi;
+        public int PositionX => _positionX;
+        public int PositionY => _positionY;
+        public int Vies => _vies;
+        public Missile MissileEnnemi { get; set; }
 
-
-
-        public string formeEnnemi
-        {
-            get
-            {
-                return _formeEnnemi;
-            }
-            set
-            {
-                _formeEnnemi = value;
-            }
-        }
-
-        public int positionX
-        {
-            get
-            {
-                return _positionX;
-            }
-            set
-            {
-                _positionX = value;
-            }
-        }
-
-        public int positionY
-        {
-            get
-            {
-                return _positionY;
-            }
-            set
-            {
-                _positionY = value;
-            }
-        }
-
-        public int vies
-        {
-            get
-            {
-                return _vies;
-            }
-            set
-            {
-                _vies = value;
-            }
-        }
-
-        public int nbScore
-        {
-            get
-            {
-                return _nbScore;
-            }
-            set
-            {
-                _nbScore = value;
-            }
-        }
-
-        public Ennemi(string formeEnnemi, int vie, int positionX, int positionY, int nbScore)
+        /// <summary>
+        /// Constructeur de l'ennemi qui initialise sa forme, ses points de vie, sa position, et son score.
+        /// </summary>
+        /// <param name="formeEnnemi">Forme visuelle de l'ennemi</param>
+        /// <param name="vies">Points de vie initiaux de l'ennemi</param>
+        /// <param name="positionX">Position X initiale de l'ennemi</param>
+        /// <param name="positionY">Position Y initiale de l'ennemi</param>
+        /// <param name="nbScore">Score rapporté par l'ennemi lorsqu'il est détruit</param>
+        public Ennemi(string formeEnnemi, int vies, int positionX, int positionY, int nbScore)
         {
             _formeEnnemi = formeEnnemi;
-            _vies = vie;
+            _vies = vies;
             _positionX = positionX;
             _positionY = positionY;
             _nbScore = nbScore;
         }
 
+        /// <summary>
+        /// Affiche l'ennemi à sa position actuelle dans la console.
+        /// </summary>
         public void Dessiner()
         {
             Console.SetCursorPosition(_positionX, _positionY);
             Console.Write(_formeEnnemi);
         }
 
-        public void Clear()
+        /// <summary>
+        /// Efface l'ennemi de la console en remplaçant sa forme par des espaces.
+        /// </summary>
+        public void Effacer()
         {
             Console.SetCursorPosition(_positionX, _positionY);
-            Console.Write(new string(' ', _formeEnnemi.Length)); // Efface l'ennemi
+            Console.Write(new string(' ', _formeEnnemi.Length));
         }
 
-        public void Move(int direction)
+        /// <summary>
+        /// Essaye de tirer un missile avec une probabilité de 5%.
+        /// </summary>
+        /// <returns>True si un missile est tiré, sinon False</returns>
+        public bool TenterTir()
         {
-            //effacer l'ennemi
-            Clear();
-            //si cest 0 il bouge a droite
-            if (direction == 0)
+            if (_missileEnnemi == null && aleatoire.Next(0, 200) < 5) // 5% de chance de tirer
             {
-                _positionX++;
+                _missileEnnemi = new Missile(_positionX + _formeEnnemi.Length / 2, _positionY + 1);
+                return true;
             }
-            //si cest 1 il bouge en bas  
-            else if (direction == 1)
-            {
-                _positionY++;
-            }
-            //si c'est 2 il bouge a gauche
-            else if (direction == 2)
-            {
-                _positionY--;
-            }
-            Dessiner();// montrer l'ennemi a sa nouvelle position
+            return false;
         }
 
-
-
-        public void TirerMissile()
+        /// <summary>
+        /// Met à jour la position et l'état du missile ennemi.
+        /// Vérifie les collisions avec les obstacles et le vaisseau du joueur.
+        /// </summary>
+        /// <param name="vaisseau">Instance du vaisseau du joueur</param>
+        /// <param name="obstacles">Liste des obstacles présents dans le jeu</param>
+        /// <returns>True s'il y a collision, sinon False</returns>
+        public bool MettreAJourMissile(Vaisseau vaisseau, List<Obstacle> obstacles)
         {
-            // Créer un missile si aucun n'est présent
-            if (_missilesEnnemi == null)
+            if (_missileEnnemi != null)
             {
-                _missilesEnnemi = new Missile(_positionX + 2, _positionY + 1);
-            }
-        }
+                _missileEnnemi.Effacer();
 
-        public void UpdateMissile()
-        {
-            // Vérifier si le missile est présent
-            if (_missilesEnnemi != null)
-            {
-                _missilesEnnemi.Clear();
-                _missilesEnnemi.PositionY--;
-
-                // Vérifier si le missile est toujours dans la fenêtre
-                if (_missilesEnnemi.PositionY >= 0)
+                // Vérifie la collision du missile avec chaque obstacle
+                foreach (var obstacle in obstacles)
                 {
-                    _missilesEnnemi.Dessiner();
+                    if (_missileEnnemi.PositionX >= obstacle.PosX &&
+                        _missileEnnemi.PositionX < obstacle.PosX + obstacle.FormeObstacle.Length &&
+                        _missileEnnemi.PositionY == obstacle.PosY)
+                    {
+                        obstacle.SubirDegat(); // Réduit les points de vie de l'obstacle
+                        _missileEnnemi = null; // Supprime le missile après la collision
+                        return true;           // Collision détectée avec un obstacle
+                    }
+                }
+
+                // Vérifie la collision avec le vaisseau du joueur
+                if (!_missileEnnemi.DeplacerVersLeBas() ||
+                    (_missileEnnemi.PositionX >= vaisseau.PosX &&
+                     _missileEnnemi.PositionX < vaisseau.PosX + vaisseau.FormeVaisseau.Length &&
+                     _missileEnnemi.PositionY == vaisseau.PosY))
+                {
+                    if (_missileEnnemi.PositionY == vaisseau.PosY &&
+                        _missileEnnemi.PositionX >= vaisseau.PosX &&
+                        _missileEnnemi.PositionX < vaisseau.PosX + vaisseau.FormeVaisseau.Length)
+                    {
+                        vaisseau.Vies--; // Réduit les points de vie du joueur
+                        vaisseau.MettreAJourAffichageVies();
+                    }
+
+                    _missileEnnemi = null; // Supprime le missile après la collision
+                    return true; // Collision détectée avec le joueur ou les limites de l'écran
                 }
                 else
                 {
-                    // Si le missile sort de l'écran, le supprimer
-                    _missilesEnnemi = null;
+                    _missileEnnemi.Dessiner();
                 }
             }
+            return false; // Aucune collision détectée
         }
 
-
-        public void UpdateEnemyBullet()
+        /// <summary>
+        /// Déplace l'ennemi horizontalement, et descend d'une ligne lorsqu'il atteint les bords de la console.
+        /// Met fin au jeu si l'ennemi atteint le bas de la console.
+        /// </summary>
+        /// <param name="largeurConsole">Largeur de la console</param>
+        /// <param name="hauteurConsole">Hauteur de la console</param>
+        public void DeplacerAvecLimites(int largeurConsole, int hauteurConsole)
         {
-            //si la balle nest pas null
-            if (_missilesEnnemi != null)
+            Effacer(); // Efface l'ennemi à sa position actuelle
+
+            // Change de direction si l'ennemi atteint un bord de la console
+            if ((_positionX <= 0 && _direction == -1) || (_positionX + _formeEnnemi.Length >= largeurConsole && _direction == 1))
             {
-                bool isInBounds = _missilesEnnemi.MoveDown(); //variable qui prend la valeur selon la méthode
-                // si la balle sort
-                if (!isInBounds)
-                {
-                    _missilesEnnemi = null; //balle devient null
-                    _missileEtat = false; //ennemi ne tire plus
-                }
-            }
-        }
-
-        public void MoveTwo()
-        {
-            //si le compteur est plus haut que le cooldown
-            if (compteur >= compteurShot)
-            {
-                int shootChance = random.Next(0, 450); //variable qui prend la valeur mise au hasard
-
-                //si le nombre est 1 est que l'ennemi est pas entrain de tirer
-                if (shootChance < 1 && _missilesEnnemi == null)
-                {
-                    TirerMissile(); // alors l ennemi tire 
-                }
-
-                compteur = 0; //mettre le compteur a 0
+                _positionY++; // Descend d'une ligne
+                _direction *= -1; // Inverse la direction (gauche/droite)
             }
             else
             {
-                compteur++; //sinon incrementer
+                _positionX += _direction; // Déplacement horizontal
             }
 
-            UpdateEnemyBullet();
+            // Vérifie si l'ennemi a atteint le bas de la console (condition de fin de jeu)
+            if (_positionY >= hauteurConsole - 1)
+            {
+                Console.SetCursorPosition(0, hauteurConsole - 1);
+                Console.Write("Game Over! Les ennemis ont atteint le bas.");
+                Environment.Exit(0); // Termine le jeu
+            }
+
+            Dessiner(); // Redessine l'ennemi à sa nouvelle position
         }
 
-        public void ResetEnemyBullet()
+        /// <summary>
+        /// Réduit les points de vie de l'ennemi lorsqu'il subit des dégâts.
+        /// Supprime l'ennemi de l'affichage s'il est détruit.
+        /// </summary>
+        /// <returns>True si l'ennemi est détruit, sinon False</returns>
+        public bool SubirDegat()
         {
-            _missilesEnnemi = null;  // la balle est nulle
-            _missileEtat = false;  // le joueur ne tire pas
+            _vies--;
+            if (_vies <= 0)
+            {
+                Effacer();
+                return true; // Indique que l'ennemi est détruit
+            }
+            return false; // L'ennemi est toujours en vie
         }
     }
 }

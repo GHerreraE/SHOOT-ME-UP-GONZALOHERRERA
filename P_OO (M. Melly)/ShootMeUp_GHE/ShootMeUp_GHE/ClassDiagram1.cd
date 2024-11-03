@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ShootMeUp_GHE.Ennemi">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgCCAAACAAAQCAggBgAAAAAAABAAAAQACAMIAIAgAAA=</HashCode>
+      <FileName>Ennemi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jeu">
+    <Position X="4.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAgAAAAAAAAAAQAAIAAAA=</HashCode>
+      <FileName>Jeu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Missile">
+    <Position X="3.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgBAAAAAAgAAAAAAAAAAMAAIAgAAI=</HashCode>
+      <FileName>Missile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShootMeUp_GHE.Obstacle">
+    <Position X="7.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAABAAAAAAAABAAACAEAwAAAAAAgAAAAAAAQEIAAQAA=</HashCode>
+      <FileName>Obstacles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShootMeUp_GHE.Program">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RgACIAAAsAACoAAAIACIIAAggAAAARAAEAAQBAJAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vaisseau">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAgAAAAAAABgEAwIQAABAAAAAAAAMAAAAiAQI=</HashCode>
+      <FileName>Vaisseau.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

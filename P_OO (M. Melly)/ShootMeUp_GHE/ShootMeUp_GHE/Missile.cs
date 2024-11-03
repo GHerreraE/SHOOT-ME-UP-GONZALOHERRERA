@@ -1,57 +1,52 @@
-﻿using System;
-using System.Threading;
+﻿/******************************************************************************
+** PROGRAMME  Missile.cs                                                     **
+**                                                                           **
+** Lieu      : ETML - section informatique                                   **
+** Auteur    : Gonzalo Javier Herrera Egoavil                                **
+** Date      : 02.11.2024                                                    **
+**                                                                           **
+** Modifications                                                             **
+**   Auteur  :                                                               **
+**   Version :                                                               **
+**   Date    :                                                               **
+**   Raisons :                                                               **
+**                                                                           **
+******************************************************************************/
 
-internal class Missile
+/******************************************************************************
+** DESCRIPTION                                                               **
+** Cette classe représente les missiles tirés par le joueur ou les ennemis   **
+** dans le jeu. Chaque missile a une position X et Y, une forme visuelle, et **
+** peut être déplacé vers le haut ou le bas. La classe inclut des méthodes   **
+** pour dessiner, effacer, et déplacer le missile, ainsi que pour vérifier   **
+** s'il est toujours dans les limites de la console.                         **
+******************************************************************************/
+
+using System;
+
+public class Missile
 {
-    /// <summary>
-    /// possition du vaisseau par rapport l'axe X
-    /// </summary>
-    private int _positionX;
+    private int _positionX;                    // Position X actuelle du missile dans la console
+    private int _positionY;                    // Position Y actuelle du missile dans la console
+    private readonly string _formeMissile = "│"; // Forme visuelle du missile
 
     /// <summary>
-    /// possition du vaisseau par rapport l'axe Y
+    /// Constructeur de la classe Missile qui initialise la position du missile.
     /// </summary>
-    private int _positionY;
-
-    /// <summary>
-    /// constante pour la forme du missile 
-    /// </summary>
-    private string _formeMissile = "│";
-
-    private DateTime lastTime;
-    private static int mouvementInterval = 30;
-
-    /// <summary>
-    /// constructeur du missile
-    /// </summary>
-    /// <param name="x">possition sur X</param>
-    /// <param name="y">position sur Y</param>
+    /// <param name="x">Position X initiale du missile</param>
+    /// <param name="y">Position Y initiale du missile</param>
     public Missile(int x, int y)
     {
         _positionX = x;
         _positionY = y;
     }
 
-    /// <summary>
-    /// recuperer la position sur l'axe X
-    /// </summary>
-    public int PositionX
-    {
-        get { return _positionX; }
-        set { _positionX = value; }
-    }
+    // Propriétés pour obtenir la position X et Y du missile
+    public int PositionX => _positionX;
+    public int PositionY => _positionY;
 
     /// <summary>
-    /// recuperer la position sur l'axe Y
-    /// </summary>
-    public int PositionY
-    {
-        get { return _positionY; }
-        set { _positionY = value; }
-    }
-
-    /// <summary>
-    /// méthode pour dessiner le missile  
+    /// Affiche le missile à sa position actuelle dans la console.
     /// </summary>
     public void Dessiner()
     {
@@ -60,61 +55,55 @@ internal class Missile
     }
 
     /// <summary>
-    /// méthode pour effacer le missile pendat qu'il bouge
+    /// Efface le missile de sa position actuelle dans la console.
     /// </summary>
-    public void Clear()
+    public void Effacer()
     {
         Console.SetCursorPosition(_positionX, _positionY);
         Console.Write(" ");
     }
 
     /// <summary>
-    /// méthode pour le mouvement du missile 
+    /// Déplace le missile vers le haut de la console, en diminuant la position Y.
+    /// Retourne false si le missile atteint la limite de la console.
     /// </summary>
-    public bool Move()
+    /// <returns>True si le missile est encore actif, False s'il atteint la limite</returns>
+    public bool Deplacer()
     {
-        // cache la balle
-        Clear();
+        Effacer(); // Efface le missile de sa position actuelle
 
-        // si la balle est toujours à l'intérieur de la zone jouable (Y > 0)
-        if (_positionY > 0)
+        // Vérifie si le missile est toujours en dessous de la ligne 2
+        if (_positionY > 2) // Limite pour laisser les 2 premières lignes pour l'affichage du score
         {
-            // déplace la balle vers le haut
-            _positionX--;
-            // affiche la balle à sa nouvelle position
-            Dessiner();
-            // ajoute un délai de 30 milisecondes
-            Thread.Sleep(30);
-            // retourne true car la balle existe toujours
-            return true;
+            _positionY--;  // Déplace le missile vers le haut
+            Dessiner();    // Redessine le missile à sa nouvelle position
+            return true;   // Indique que le missile est toujours actif
         }
         else
-            // si la balle atteint le bord elle "meurt"
-            return false;
-    }
-
-    public bool MoveDown()
-    {
-        // vérifie si le délai est fini depuis le dernier mouvement
-        if ((DateTime.Now - lastTime).TotalMilliseconds >= mouvementInterval)
         {
-            Clear(); // efface la balle
-
-            _positionY++; // incremente la position y
-            lastTime = DateTime.Now; // met à jour le dernier mouvement
-
-            // si la balle est toujours dans la console
-            if (_positionY < Console.WindowHeight)
-            {
-                Move(); // affiche la balle dans la nouvelle position
-                return true;
-            }
-            else
-            {
-                return false; // false si la balle a depasser la console
-            }
+            return false;  // Le missile a atteint la limite de la console (ligne 2)
         }
-        return true; // si le délai est fini alors il retourne true
     }
 
+    /// <summary>
+    /// Déplace le missile vers le bas de la console, en augmentant la position Y.
+    /// Retourne false si le missile atteint la limite inférieure de la console.
+    /// </summary>
+    /// <returns>True si le missile est encore actif, False s'il atteint la limite inférieure</returns>
+    public bool DeplacerVersLeBas()
+    {
+        Effacer(); // Efface le missile de sa position actuelle
+
+        // Vérifie si le missile est toujours au-dessus de la limite inférieure de la console
+        if (_positionY < Console.WindowHeight - 1)
+        {
+            _positionY++; // Déplace le missile vers le bas
+            Dessiner();   // Redessine le missile à sa nouvelle position
+            return true;  // Indique que le missile est toujours actif
+        }
+        else
+        {
+            return false; // Le missile a atteint la limite inférieure de la console
+        }
+    }
 }

@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: ShootMeUp_GHE
+  commentId: N:ShootMeUp_GHE
+  id: ShootMeUp_GHE
+  children:
+  - ShootMeUp_GHE.Ennemi
+  - ShootMeUp_GHE.Obstacle
+  - ShootMeUp_GHE.Program
+  langs:
+  - csharp
+  - vb
+  name: ShootMeUp_GHE
+  nameWithType: ShootMeUp_GHE
+  fullName: ShootMeUp_GHE
+  type: Namespace
+  assemblies:
+  - ShootMeUp_GHE
+references:
+- uid: ShootMeUp_GHE.Obstacle
+  commentId: T:ShootMeUp_GHE.Obstacle
+  href: ShootMeUp_GHE.Obstacle.html
+  name: Obstacle
+  nameWithType: Obstacle
+  fullName: ShootMeUp_GHE.Obstacle
+- uid: ShootMeUp_GHE.Ennemi
+  commentId: T:ShootMeUp_GHE.Ennemi
+  href: ShootMeUp_GHE.Ennemi.html
+  name: Ennemi
+  nameWithType: Ennemi
+  fullName: ShootMeUp_GHE.Ennemi
+- uid: ShootMeUp_GHE.Program
+  commentId: T:ShootMeUp_GHE.Program
+  href: ShootMeUp_GHE.Program.html
+  name: Program
+  nameWithType: Program
+  fullName: ShootMeUp_GHE.Program

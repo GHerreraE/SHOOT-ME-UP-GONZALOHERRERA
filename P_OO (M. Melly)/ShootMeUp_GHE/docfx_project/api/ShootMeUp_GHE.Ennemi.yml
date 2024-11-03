@@ -1,0 +1,910 @@
+### YamlMime:ManagedReference
+items:
+- uid: ShootMeUp_GHE.Ennemi
+  commentId: T:ShootMeUp_GHE.Ennemi
+  id: Ennemi
+  parent: ShootMeUp_GHE
+  children:
+  - ShootMeUp_GHE.Ennemi.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32)
+  - ShootMeUp_GHE.Ennemi.DeplacerAvecLimites(System.Int32,System.Int32)
+  - ShootMeUp_GHE.Ennemi.Dessiner
+  - ShootMeUp_GHE.Ennemi.Effacer
+  - ShootMeUp_GHE.Ennemi.FormeEnnemi
+  - ShootMeUp_GHE.Ennemi.MettreAJourMissile(Vaisseau,System.Collections.Generic.List{ShootMeUp_GHE.Obstacle})
+  - ShootMeUp_GHE.Ennemi.MissileEnnemi
+  - ShootMeUp_GHE.Ennemi.PositionX
+  - ShootMeUp_GHE.Ennemi.PositionY
+  - ShootMeUp_GHE.Ennemi.SubirDegat
+  - ShootMeUp_GHE.Ennemi.TenterTir
+  - ShootMeUp_GHE.Ennemi.Vies
+  langs:
+  - csharp
+  - vb
+  name: Ennemi
+  nameWithType: Ennemi
+  fullName: ShootMeUp_GHE.Ennemi
+  type: Class
+  source:
+    remote:
+      path: P_OO (M. Melly)/ShootMeUp_GHE/ShootMeUp_GHE/Ennemi.cs
+      branch: main
+      repo: https://github.com/GHerreraE/SHOOT-ME-UP-GONZALOHERRERA.git
+    id: Ennemi
+    path: ../ShootMeUp_GHE/Ennemi.cs
+    startLine: 29
+  assemblies:
+  - ShootMeUp_GHE
+  namespace: ShootMeUp_GHE
+  syntax:
+    content: public class Ennemi
+    content.vb: Public Class Ennemi
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+- uid: ShootMeUp_GHE.Ennemi.FormeEnnemi
+  commentId: P:ShootMeUp_GHE.Ennemi.FormeEnnemi
+  id: FormeEnnemi
+  parent: ShootMeUp_GHE.Ennemi
+  langs:
+  - csharp
+  - vb
+  name: FormeEnnemi
+  nameWithType: Ennemi.FormeEnnemi
+  fullName: ShootMeUp_GHE.Ennemi.FormeEnnemi
+  type: Property
+  source:
+    remote:
+      path: P_OO (M. Melly)/ShootMeUp_GHE/ShootMeUp_GHE/Ennemi.cs
+      branch: main
+      repo: https://github.com/GHerreraE/SHOOT-ME-UP-GONZALOHERRERA.git
+    id: FormeEnnemi
+    path: ../ShootMeUp_GHE/Ennemi.cs
+    startLine: 41
+  assemblies:
+  - ShootMeUp_GHE
+  namespace: ShootMeUp_GHE
+  syntax:
+    content: public string FormeEnnemi { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property FormeEnnemi As String
+  overload: ShootMeUp_GHE.Ennemi.FormeEnnemi*
+- uid: ShootMeUp_GHE.Ennemi.PositionX
+  commentId: P:ShootMeUp_GHE.Ennemi.PositionX
+  id: PositionX
+  parent: ShootMeUp_GHE.Ennemi
+  langs:
+  - csharp
+  - vb
+  name: PositionX
+  nameWithType: Ennemi.PositionX
+  fullName: ShootMeUp_GHE.Ennemi.PositionX
+  type: Property
+  source:
+    remote:
+      path: P_OO (M. Melly)/ShootMeUp_GHE/ShootMeUp_GHE/Ennemi.cs
+      branch: main
+      repo: https://github.com/GHerreraE/SHOOT-ME-UP-GONZALOHERRERA.git
+    id: PositionX
+    path: ../ShootMeUp_GHE/Ennemi.cs
+    startLine: 42
+  assemblies:
+  - ShootMeUp_GHE
+  namespace: ShootMeUp_GHE
+  syntax:
+    content: public int PositionX { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property PositionX As Integer
+  overload: ShootMeUp_GHE.Ennemi.PositionX*
+- uid: ShootMeUp_GHE.Ennemi.PositionY
+  commentId: P:ShootMeUp_GHE.Ennemi.PositionY
+  id: PositionY
+  parent: ShootMeUp_GHE.Ennemi
+  langs:
+  - csharp
+  - vb
+  name: PositionY
+  nameWithType: Ennemi.PositionY
+  fullName: ShootMeUp_GHE.Ennemi.PositionY
+  type: Property
+  source:
+    remote:
+      path: P_OO (M. Melly)/ShootMeUp_GHE/ShootMeUp_GHE/Ennemi.cs
+      branch: main
+      repo: https://github.com/GHerreraE/SHOOT-ME-UP-GONZALOHERRERA.git
+    id: PositionY
+    path: ../ShootMeUp_GHE/Ennemi.cs
+    startLine: 43
+  assemblies:
+  - ShootMeUp_GHE
+  namespace: ShootMeUp_GHE
+  syntax:
+    content: public int PositionY { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property PositionY As Integer
+  overload: ShootMeUp_GHE.Ennemi.PositionY*
+- uid: ShootMeUp_GHE.Ennemi.Vies
+  commentId: P:ShootMeUp_GHE.Ennemi.Vies
+  id: Vies
+  parent: ShootMeUp_GHE.Ennemi
+  langs:
+  - csharp
+  - vb
+  name: Vies
+  nameWithType: Ennemi.Vies
+  fullName: ShootMeUp_GHE.Ennemi.Vies
+  type: Property
+  source:
+    remote:
+      path: P_OO (M. Melly)/ShootMeUp_GHE/ShootMeUp_GHE/Ennemi.cs
+      branch: main
+      repo: https://github.com/GHerreraE/SHOOT-ME-UP-GONZALOHERRERA.git
+    id: Vies
+    path: ../ShootMeUp_GHE/Ennemi.cs
+    startLine: 44
+  assemblies:
+  - ShootMeUp_GHE
+  namespace: ShootMeUp_GHE
+  syntax:
+    content: public int Vies { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Vies As Integer
+  overload: ShootMeUp_GHE.Ennemi.Vies*
+- uid: ShootMeUp_GHE.Ennemi.MissileEnnemi
+  commentId: P:ShootMeUp_GHE.Ennemi.MissileEnnemi
+  id: MissileEnnemi
+  parent: ShootMeUp_GHE.Ennemi
+  langs:
+  - csharp
+  - vb
+  name: MissileEnnemi
+  nameWithType: Ennemi.MissileEnnemi
+  fullName: ShootMeUp_GHE.Ennemi.MissileEnnemi
+  type: Property
+  source:
+    remote:
+      path: P_OO (M. Melly)/ShootMeUp_GHE/ShootMeUp_GHE/Ennemi.cs
+      branch: main
+      repo: https://github.com/GHerreraE/SHOOT-ME-UP-GONZALOHERRERA.git
+    id: MissileEnnemi
+    path: ../ShootMeUp_GHE/Ennemi.cs
+    startLine: 45
+  assemblies:
+  - ShootMeUp_GHE
+  namespace: ShootMeUp_GHE
+  syntax:
+    content: public Missile MissileEnnemi { get; set; }
+    parameters: []
+    return:
+      type: Missile
+    content.vb: Public Property MissileEnnemi As Missile
+  overload: ShootMeUp_GHE.Ennemi.MissileEnnemi*
+- uid: ShootMeUp_GHE.Ennemi.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32)
+  commentId: M:ShootMeUp_GHE.Ennemi.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32)
+  id: '#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32)'
+  parent: ShootMeUp_GHE.Ennemi
+  langs:
+  - csharp
+  - vb
+  name: Ennemi(string, int, int, int, int)
+  nameWithType: Ennemi.Ennemi(string, int, int, int, int)
+  fullName: ShootMeUp_GHE.Ennemi.Ennemi(string, int, int, int, int)
+  type: Constructor
+  source:
+    remote:
+      path: P_OO (M. Melly)/ShootMeUp_GHE/ShootMeUp_GHE/Ennemi.cs
+      branch: main
+      repo: https://github.com/GHerreraE/SHOOT-ME-UP-GONZALOHERRERA.git
+    id: .ctor
+    path: ../ShootMeUp_GHE/Ennemi.cs
+    startLine: 55
+  assemblies:
+  - ShootMeUp_GHE
+  namespace: ShootMeUp_GHE
+  summary: Constructeur de l'ennemi qui initialise sa forme, ses points de vie, sa position, et son score.
+  example: []
+  syntax:
+    content: public Ennemi(string formeEnnemi, int vies, int positionX, int positionY, int nbScore)
+    parameters:
+    - id: formeEnnemi
+      type: System.String
+      description: Forme visuelle de l'ennemi
+    - id: vies
+      type: System.Int32
+      description: Points de vie initiaux de l'ennemi
+    - id: positionX
+      type: System.Int32
+      description: Position X initiale de l'ennemi
+    - id: positionY
+      type: System.Int32
+      description: Position Y initiale de l'ennemi
+    - id: nbScore
+      type: System.Int32
+      description: Score rapporté par l'ennemi lorsqu'il est détruit
+    content.vb: Public Sub New(formeEnnemi As String, vies As Integer, positionX As Integer, positionY As Integer, nbScore As Integer)
+  overload: ShootMeUp_GHE.Ennemi.#ctor*
+  nameWithType.vb: Ennemi.New(String, Integer, Integer, Integer, Integer)
+  fullName.vb: ShootMeUp_GHE.Ennemi.New(String, Integer, Integer, Integer, Integer)
+  name.vb: New(String, Integer, Integer, Integer, Integer)
+- uid: ShootMeUp_GHE.Ennemi.Dessiner
+  commentId: M:ShootMeUp_GHE.Ennemi.Dessiner
+  id: Dessiner
+  parent: ShootMeUp_GHE.Ennemi
+  langs:
+  - csharp
+  - vb
+  name: Dessiner()
+  nameWithType: Ennemi.Dessiner()
+  fullName: ShootMeUp_GHE.Ennemi.Dessiner()
+  type: Method
+  source:
+    remote:
+      path: P_OO (M. Melly)/ShootMeUp_GHE/ShootMeUp_GHE/Ennemi.cs
+      branch: main
+      repo: https://github.com/GHerreraE/SHOOT-ME-UP-GONZALOHERRERA.git
+    id: Dessiner
+    path: ../ShootMeUp_GHE/Ennemi.cs
+    startLine: 67
+  assemblies:
+  - ShootMeUp_GHE
+  namespace: ShootMeUp_GHE
+  summary: Affiche l'ennemi à sa position actuelle dans la console.
+  example: []
+  syntax:
+    content: public void Dessiner()
+    content.vb: Public Sub Dessiner()
+  overload: ShootMeUp_GHE.Ennemi.Dessiner*
+- uid: ShootMeUp_GHE.Ennemi.Effacer
+  commentId: M:ShootMeUp_GHE.Ennemi.Effacer
+  id: Effacer
+  parent: ShootMeUp_GHE.Ennemi
+  langs:
+  - csharp
+  - vb
+  name: Effacer()
+  nameWithType: Ennemi.Effacer()
+  fullName: ShootMeUp_GHE.Ennemi.Effacer()
+  type: Method
+  source:
+    remote:
+      path: P_OO (M. Melly)/ShootMeUp_GHE/ShootMeUp_GHE/Ennemi.cs
+      branch: main
+      repo: https://github.com/GHerreraE/SHOOT-ME-UP-GONZALOHERRERA.git
+    id: Effacer
+    path: ../ShootMeUp_GHE/Ennemi.cs
+    startLine: 76
+  assemblies:
+  - ShootMeUp_GHE
+  namespace: ShootMeUp_GHE
+  summary: Efface l'ennemi de la console en remplaçant sa forme par des espaces.
+  example: []
+  syntax:
+    content: public void Effacer()
+    content.vb: Public Sub Effacer()
+  overload: ShootMeUp_GHE.Ennemi.Effacer*
+- uid: ShootMeUp_GHE.Ennemi.TenterTir
+  commentId: M:ShootMeUp_GHE.Ennemi.TenterTir
+  id: TenterTir
+  parent: ShootMeUp_GHE.Ennemi
+  langs:
+  - csharp
+  - vb
+  name: TenterTir()
+  nameWithType: Ennemi.TenterTir()
+  fullName: ShootMeUp_GHE.Ennemi.TenterTir()
+  type: Method
+  source:
+    remote:
+      path: P_OO (M. Melly)/ShootMeUp_GHE/ShootMeUp_GHE/Ennemi.cs
+      branch: main
+      repo: https://github.com/GHerreraE/SHOOT-ME-UP-GONZALOHERRERA.git
+    id: TenterTir
+    path: ../ShootMeUp_GHE/Ennemi.cs
+    startLine: 86
+  assemblies:
+  - ShootMeUp_GHE
+  namespace: ShootMeUp_GHE
+  summary: Essaye de tirer un missile avec une probabilité de 5%.
+  example: []
+  syntax:
+    content: public bool TenterTir()
+    return:
+      type: System.Boolean
+      description: True si un missile est tiré, sinon False
+    content.vb: Public Function TenterTir() As Boolean
+  overload: ShootMeUp_GHE.Ennemi.TenterTir*
+- uid: ShootMeUp_GHE.Ennemi.MettreAJourMissile(Vaisseau,System.Collections.Generic.List{ShootMeUp_GHE.Obstacle})
+  commentId: M:ShootMeUp_GHE.Ennemi.MettreAJourMissile(Vaisseau,System.Collections.Generic.List{ShootMeUp_GHE.Obstacle})
+  id: MettreAJourMissile(Vaisseau,System.Collections.Generic.List{ShootMeUp_GHE.Obstacle})
+  parent: ShootMeUp_GHE.Ennemi
+  langs:
+  - csharp
+  - vb
+  name: MettreAJourMissile(Vaisseau, List<Obstacle>)
+  nameWithType: Ennemi.MettreAJourMissile(Vaisseau, List<Obstacle>)
+  fullName: ShootMeUp_GHE.Ennemi.MettreAJourMissile(Vaisseau, System.Collections.Generic.List<ShootMeUp_GHE.Obstacle>)
+  type: Method
+  source:
+    remote:
+      path: P_OO (M. Melly)/ShootMeUp_GHE/ShootMeUp_GHE/Ennemi.cs
+      branch: main
+      repo: https://github.com/GHerreraE/SHOOT-ME-UP-GONZALOHERRERA.git
+    id: MettreAJourMissile
+    path: ../ShootMeUp_GHE/Ennemi.cs
+    startLine: 103
+  assemblies:
+  - ShootMeUp_GHE
+  namespace: ShootMeUp_GHE
+  summary: >-
+    Met à jour la position et l'état du missile ennemi.
+
+    Vérifie les collisions avec les obstacles et le vaisseau du joueur.
+  example: []
+  syntax:
+    content: public bool MettreAJourMissile(Vaisseau vaisseau, List<Obstacle> obstacles)
+    parameters:
+    - id: vaisseau
+      type: Vaisseau
+      description: Instance du vaisseau du joueur
+    - id: obstacles
+      type: System.Collections.Generic.List{ShootMeUp_GHE.Obstacle}
+      description: Liste des obstacles présents dans le jeu
+    return:
+      type: System.Boolean
+      description: True s'il y a collision, sinon False
+    content.vb: Public Function MettreAJourMissile(vaisseau As Vaisseau, obstacles As List(Of Obstacle)) As Boolean
+  overload: ShootMeUp_GHE.Ennemi.MettreAJourMissile*
+  nameWithType.vb: Ennemi.MettreAJourMissile(Vaisseau, List(Of Obstacle))
+  fullName.vb: ShootMeUp_GHE.Ennemi.MettreAJourMissile(Vaisseau, System.Collections.Generic.List(Of ShootMeUp_GHE.Obstacle))
+  name.vb: MettreAJourMissile(Vaisseau, List(Of Obstacle))
+- uid: ShootMeUp_GHE.Ennemi.DeplacerAvecLimites(System.Int32,System.Int32)
+  commentId: M:ShootMeUp_GHE.Ennemi.DeplacerAvecLimites(System.Int32,System.Int32)
+  id: DeplacerAvecLimites(System.Int32,System.Int32)
+  parent: ShootMeUp_GHE.Ennemi
+  langs:
+  - csharp
+  - vb
+  name: DeplacerAvecLimites(int, int)
+  nameWithType: Ennemi.DeplacerAvecLimites(int, int)
+  fullName: ShootMeUp_GHE.Ennemi.DeplacerAvecLimites(int, int)
+  type: Method
+  source:
+    remote:
+      path: P_OO (M. Melly)/ShootMeUp_GHE/ShootMeUp_GHE/Ennemi.cs
+      branch: main
+      repo: https://github.com/GHerreraE/SHOOT-ME-UP-GONZALOHERRERA.git
+    id: DeplacerAvecLimites
+    path: ../ShootMeUp_GHE/Ennemi.cs
+    startLine: 153
+  assemblies:
+  - ShootMeUp_GHE
+  namespace: ShootMeUp_GHE
+  summary: >-
+    Déplace l'ennemi horizontalement, et descend d'une ligne lorsqu'il atteint les bords de la console.
+
+    Met fin au jeu si l'ennemi atteint le bas de la console.
+  example: []
+  syntax:
+    content: public void DeplacerAvecLimites(int largeurConsole, int hauteurConsole)
+    parameters:
+    - id: largeurConsole
+      type: System.Int32
+      description: Largeur de la console
+    - id: hauteurConsole
+      type: System.Int32
+      description: Hauteur de la console
+    content.vb: Public Sub DeplacerAvecLimites(largeurConsole As Integer, hauteurConsole As Integer)
+  overload: ShootMeUp_GHE.Ennemi.DeplacerAvecLimites*
+  nameWithType.vb: Ennemi.DeplacerAvecLimites(Integer, Integer)
+  fullName.vb: ShootMeUp_GHE.Ennemi.DeplacerAvecLimites(Integer, Integer)
+  name.vb: DeplacerAvecLimites(Integer, Integer)
+- uid: ShootMeUp_GHE.Ennemi.SubirDegat
+  commentId: M:ShootMeUp_GHE.Ennemi.SubirDegat
+  id: SubirDegat
+  parent: ShootMeUp_GHE.Ennemi
+  langs:
+  - csharp
+  - vb
+  name: SubirDegat()
+  nameWithType: Ennemi.SubirDegat()
+  fullName: ShootMeUp_GHE.Ennemi.SubirDegat()
+  type: Method
+  source:
+    remote:
+      path: P_OO (M. Melly)/ShootMeUp_GHE/ShootMeUp_GHE/Ennemi.cs
+      branch: main
+      repo: https://github.com/GHerreraE/SHOOT-ME-UP-GONZALOHERRERA.git
+    id: SubirDegat
+    path: ../ShootMeUp_GHE/Ennemi.cs
+    startLine: 184
+  assemblies:
+  - ShootMeUp_GHE
+  namespace: ShootMeUp_GHE
+  summary: >-
+    Réduit les points de vie de l'ennemi lorsqu'il subit des dégâts.
+
+    Supprime l'ennemi de l'affichage s'il est détruit.
+  example: []
+  syntax:
+    content: public bool SubirDegat()
+    return:
+      type: System.Boolean
+      description: True si l'ennemi est détruit, sinon False
+    content.vb: Public Function SubirDegat() As Boolean
+  overload: ShootMeUp_GHE.Ennemi.SubirDegat*
+references:
+- uid: ShootMeUp_GHE
+  commentId: N:ShootMeUp_GHE
+  href: ShootMeUp_GHE.html
+  name: ShootMeUp_GHE
+  nameWithType: ShootMeUp_GHE
+  fullName: ShootMeUp_GHE
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ShootMeUp_GHE.Ennemi.FormeEnnemi*
+  commentId: Overload:ShootMeUp_GHE.Ennemi.FormeEnnemi
+  href: ShootMeUp_GHE.Ennemi.html#ShootMeUp_GHE_Ennemi_FormeEnnemi
+  name: FormeEnnemi
+  nameWithType: Ennemi.FormeEnnemi
+  fullName: ShootMeUp_GHE.Ennemi.FormeEnnemi
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: ShootMeUp_GHE.Ennemi.PositionX*
+  commentId: Overload:ShootMeUp_GHE.Ennemi.PositionX
+  href: ShootMeUp_GHE.Ennemi.html#ShootMeUp_GHE_Ennemi_PositionX
+  name: PositionX
+  nameWithType: Ennemi.PositionX
+  fullName: ShootMeUp_GHE.Ennemi.PositionX
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: ShootMeUp_GHE.Ennemi.PositionY*
+  commentId: Overload:ShootMeUp_GHE.Ennemi.PositionY
+  href: ShootMeUp_GHE.Ennemi.html#ShootMeUp_GHE_Ennemi_PositionY
+  name: PositionY
+  nameWithType: Ennemi.PositionY
+  fullName: ShootMeUp_GHE.Ennemi.PositionY
+- uid: ShootMeUp_GHE.Ennemi.Vies*
+  commentId: Overload:ShootMeUp_GHE.Ennemi.Vies
+  href: ShootMeUp_GHE.Ennemi.html#ShootMeUp_GHE_Ennemi_Vies
+  name: Vies
+  nameWithType: Ennemi.Vies
+  fullName: ShootMeUp_GHE.Ennemi.Vies
+- uid: ShootMeUp_GHE.Ennemi.MissileEnnemi*
+  commentId: Overload:ShootMeUp_GHE.Ennemi.MissileEnnemi
+  href: ShootMeUp_GHE.Ennemi.html#ShootMeUp_GHE_Ennemi_MissileEnnemi
+  name: MissileEnnemi
+  nameWithType: Ennemi.MissileEnnemi
+  fullName: ShootMeUp_GHE.Ennemi.MissileEnnemi
+- uid: Missile
+  commentId: T:Missile
+  href: Missile.html
+  name: Missile
+  nameWithType: Missile
+  fullName: Missile
+- uid: ShootMeUp_GHE.Ennemi.#ctor*
+  commentId: Overload:ShootMeUp_GHE.Ennemi.#ctor
+  href: ShootMeUp_GHE.Ennemi.html#ShootMeUp_GHE_Ennemi__ctor_System_String_System_Int32_System_Int32_System_Int32_System_Int32_
+  name: Ennemi
+  nameWithType: Ennemi.Ennemi
+  fullName: ShootMeUp_GHE.Ennemi.Ennemi
+  nameWithType.vb: Ennemi.New
+  fullName.vb: ShootMeUp_GHE.Ennemi.New
+  name.vb: New
+- uid: ShootMeUp_GHE.Ennemi.Dessiner*
+  commentId: Overload:ShootMeUp_GHE.Ennemi.Dessiner
+  href: ShootMeUp_GHE.Ennemi.html#ShootMeUp_GHE_Ennemi_Dessiner
+  name: Dessiner
+  nameWithType: Ennemi.Dessiner
+  fullName: ShootMeUp_GHE.Ennemi.Dessiner
+- uid: ShootMeUp_GHE.Ennemi.Effacer*
+  commentId: Overload:ShootMeUp_GHE.Ennemi.Effacer
+  href: ShootMeUp_GHE.Ennemi.html#ShootMeUp_GHE_Ennemi_Effacer
+  name: Effacer
+  nameWithType: Ennemi.Effacer
+  fullName: ShootMeUp_GHE.Ennemi.Effacer
+- uid: ShootMeUp_GHE.Ennemi.TenterTir*
+  commentId: Overload:ShootMeUp_GHE.Ennemi.TenterTir
+  href: ShootMeUp_GHE.Ennemi.html#ShootMeUp_GHE_Ennemi_TenterTir
+  name: TenterTir
+  nameWithType: Ennemi.TenterTir
+  fullName: ShootMeUp_GHE.Ennemi.TenterTir
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: ShootMeUp_GHE.Ennemi.MettreAJourMissile*
+  commentId: Overload:ShootMeUp_GHE.Ennemi.MettreAJourMissile
+  href: ShootMeUp_GHE.Ennemi.html#ShootMeUp_GHE_Ennemi_MettreAJourMissile_Vaisseau_System_Collections_Generic_List_ShootMeUp_GHE_Obstacle__
+  name: MettreAJourMissile
+  nameWithType: Ennemi.MettreAJourMissile
+  fullName: ShootMeUp_GHE.Ennemi.MettreAJourMissile
+- uid: Vaisseau
+  commentId: T:Vaisseau
+  href: Vaisseau.html
+  name: Vaisseau
+  nameWithType: Vaisseau
+  fullName: Vaisseau
+- uid: System.Collections.Generic.List{ShootMeUp_GHE.Obstacle}
+  commentId: T:System.Collections.Generic.List{ShootMeUp_GHE.Obstacle}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Obstacle>
+  nameWithType: List<Obstacle>
+  fullName: System.Collections.Generic.List<ShootMeUp_GHE.Obstacle>
+  nameWithType.vb: List(Of Obstacle)
+  fullName.vb: System.Collections.Generic.List(Of ShootMeUp_GHE.Obstacle)
+  name.vb: List(Of Obstacle)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: ShootMeUp_GHE.Obstacle
+    name: Obstacle
+    href: ShootMeUp_GHE.Obstacle.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: ShootMeUp_GHE.Obstacle
+    name: Obstacle
+    href: ShootMeUp_GHE.Obstacle.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: ShootMeUp_GHE.Ennemi.DeplacerAvecLimites*
+  commentId: Overload:ShootMeUp_GHE.Ennemi.DeplacerAvecLimites
+  href: ShootMeUp_GHE.Ennemi.html#ShootMeUp_GHE_Ennemi_DeplacerAvecLimites_System_Int32_System_Int32_
+  name: DeplacerAvecLimites
+  nameWithType: Ennemi.DeplacerAvecLimites
+  fullName: ShootMeUp_GHE.Ennemi.DeplacerAvecLimites
+- uid: ShootMeUp_GHE.Ennemi.SubirDegat*
+  commentId: Overload:ShootMeUp_GHE.Ennemi.SubirDegat
+  href: ShootMeUp_GHE.Ennemi.html#ShootMeUp_GHE_Ennemi_SubirDegat
+  name: SubirDegat
+  nameWithType: Ennemi.SubirDegat
+  fullName: ShootMeUp_GHE.Ennemi.SubirDegat

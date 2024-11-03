@@ -1,0 +1,37 @@
+{
+  "api/ShootMeUp_GHE.Ennemi.html": {
+    "href": "api/ShootMeUp_GHE.Ennemi.html",
+    "title": "Class Ennemi",
+    "keywords": "Class Ennemi Namespace ShootMeUp_GHE Assembly ShootMeUp_GHE.dll public class Ennemi Inheritance object Ennemi Inherited Members object.ToString() object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Constructors Ennemi(string, int, int, int, int) Constructeur de l'ennemi qui initialise sa forme, ses points de vie, sa position, et son score. public Ennemi(string formeEnnemi, int vies, int positionX, int positionY, int nbScore) Parameters formeEnnemi string Forme visuelle de l'ennemi vies int Points de vie initiaux de l'ennemi positionX int Position X initiale de l'ennemi positionY int Position Y initiale de l'ennemi nbScore int Score rapporté par l'ennemi lorsqu'il est détruit Properties FormeEnnemi public string FormeEnnemi { get; } Property Value string MissileEnnemi public Missile MissileEnnemi { get; set; } Property Value Missile PositionX public int PositionX { get; } Property Value int PositionY public int PositionY { get; } Property Value int Vies public int Vies { get; } Property Value int Methods DeplacerAvecLimites(int, int) Déplace l'ennemi horizontalement, et descend d'une ligne lorsqu'il atteint les bords de la console. Met fin au jeu si l'ennemi atteint le bas de la console. public void DeplacerAvecLimites(int largeurConsole, int hauteurConsole) Parameters largeurConsole int Largeur de la console hauteurConsole int Hauteur de la console Dessiner() Affiche l'ennemi à sa position actuelle dans la console. public void Dessiner() Effacer() Efface l'ennemi de la console en remplaçant sa forme par des espaces. public void Effacer() MettreAJourMissile(Vaisseau, List<Obstacle>) Met à jour la position et l'état du missile ennemi. Vérifie les collisions avec les obstacles et le vaisseau du joueur. public bool MettreAJourMissile(Vaisseau vaisseau, List<Obstacle> obstacles) Parameters vaisseau Vaisseau Instance du vaisseau du joueur obstacles List<Obstacle> Liste des obstacles présents dans le jeu Returns bool True s'il y a collision, sinon False SubirDegat() Réduit les points de vie de l'ennemi lorsqu'il subit des dégâts. Supprime l'ennemi de l'affichage s'il est détruit. public bool SubirDegat() Returns bool True si l'ennemi est détruit, sinon False TenterTir() Essaye de tirer un missile avec une probabilité de 5%. public bool TenterTir() Returns bool True si un missile est tiré, sinon False"
+  },
+  "api/ShootMeUp_GHE.Obstacle.html": {
+    "href": "api/ShootMeUp_GHE.Obstacle.html",
+    "title": "Class Obstacle",
+    "keywords": "Class Obstacle Namespace ShootMeUp_GHE Assembly ShootMeUp_GHE.dll public class Obstacle Inheritance object Obstacle Inherited Members object.ToString() object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() Constructors Obstacle(int, int, int) Constructeur de la classe Obstacle qui initialise la position et les points de vie. public Obstacle(int posX, int posY, int pointsDeVie = 5) Parameters posX int Position X de l'obstacle posY int Position Y de l'obstacle pointsDeVie int Points de vie de l'obstacle, par défaut à 5 Properties Detruit public bool Detruit { get; } Property Value bool FormeObstacle public string FormeObstacle { get; } Property Value string PointsDeVie public int PointsDeVie { get; } Property Value int PosX public int PosX { get; } Property Value int PosY public int PosY { get; } Property Value int Methods AfficherObstacle() Affiche visuellement l'obstacle dans la console à sa position actuelle. public void AfficherObstacle() EffacerObstacle() Efface l'obstacle de l'écran en remplaçant sa forme par des espaces. public void EffacerObstacle() SubirDegat() Réduit les points de vie de l'obstacle lorsqu'il subit un dégât. Si les points de vie atteignent zéro, l'obstacle est effacé de l'écran. public void SubirDegat()"
+  },
+  "api/ShootMeUp_GHE.Program.html": {
+    "href": "api/ShootMeUp_GHE.Program.html",
+    "title": "Class Program",
+    "keywords": "Class Program Namespace ShootMeUp_GHE Assembly ShootMeUp_GHE.dll public class Program Inheritance object Program Inherited Members object.ToString() object.Equals(object) object.Equals(object, object) object.ReferenceEquals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone()"
+  },
+  "api/ShootMeUp_GHE.html": {
+    "href": "api/ShootMeUp_GHE.html",
+    "title": "Namespace ShootMeUp_GHE",
+    "keywords": "Namespace ShootMeUp_GHE Classes Ennemi Obstacle Program"
+  },
+  "docs/getting-started.html": {
+    "href": "docs/getting-started.html",
+    "title": "Getting Started",
+    "keywords": "Getting Started"
+  },
+  "docs/introduction.html": {
+    "href": "docs/introduction.html",
+    "title": "Introduction",
+    "keywords": "Introduction"
+  },
+  "index.html": {
+    "href": "index.html",
+    "title": "This is the HOMEPAGE.",
+    "keywords": "This is the HOMEPAGE. Refer to Markdown for how to write markdown files. Quick Start Notes: Add images to the images folder if the file is referencing an image."
+  }
+}
