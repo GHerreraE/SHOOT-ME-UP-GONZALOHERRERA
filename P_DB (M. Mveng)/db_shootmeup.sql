@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db:3306
--- Généré le : ven. 01 nov. 2024 à 07:16
+-- Généré le : lun. 13 jan. 2025 à 21:51
 -- Version du serveur : 8.0.30
 -- Version de PHP : 8.0.27
 
@@ -26,19 +26,19 @@ USE db_shootmeup;
 -- --------------------------------------------------------
 
 --
--- Structure de la table `avoir`
+-- Structure de la table `t_avoir`
 --
 
-CREATE TABLE `avoir` (
-  `ennemi_id` int NOT NULL,
-  `partie_id` int NOT NULL
+CREATE TABLE `t_avoir` (
+  `fk_ennemi_id` INT NOT NULL,
+  `fk_partie_id` INT NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Déchargement des données de la table `avoir`
+-- Déchargement des données de la table `t_avoir`
 --
 
-INSERT INTO `avoir` (`ennemi_id`, `partie_id`) VALUES
+INSERT INTO `t_avoir` (`fk_ennemi_id`, `fk_partie_id`) VALUES
 (1, 1),
 (2, 1),
 (3, 1),
@@ -67,19 +67,19 @@ INSERT INTO `avoir` (`ennemi_id`, `partie_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `contenir`
+-- Structure de la table `t_contenir`
 --
 
-CREATE TABLE `contenir` (
-  `obstacle_id` int NOT NULL,
-  `partie_id` int NOT NULL
+CREATE TABLE `t_contenir` (
+  `fk_obstacle_id` INT NOT NULL,
+  `fk_partie_id` INT NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Déchargement des données de la table `contenir`
+-- Déchargement des données de la table `t_contenir`
 --
 
-INSERT INTO `contenir` (`obstacle_id`, `partie_id`) VALUES
+INSERT INTO `t_contenir` (`fk_obstacle_id`, `fk_partie_id`) VALUES
 (1, 1),
 (2, 1),
 (3, 1),
@@ -94,19 +94,19 @@ INSERT INTO `contenir` (`obstacle_id`, `partie_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `jouer`
+-- Structure de la table `t_jouer`
 --
 
-CREATE TABLE `jouer` (
-  `joueur_id` int NOT NULL,
-  `partie_id` int NOT NULL
+CREATE TABLE `t_jouer` (
+  `joueur_id` INT NOT NULL,
+  `partie_id` INT NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Déchargement des données de la table `jouer`
+-- Déchargement des données de la table `t_jouer`
 --
 
-INSERT INTO `jouer` (`joueur_id`, `partie_id`) VALUES
+INSERT INTO `t_jouer` (`joueur_id`, `partie_id`) VALUES
 (1, 1),
 (2, 1),
 (1, 2),
@@ -121,19 +121,19 @@ INSERT INTO `jouer` (`joueur_id`, `partie_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `posseder`
+-- Structure de la table `t_posseder`
 --
 
-CREATE TABLE `posseder` (
-  `joueur_id` int NOT NULL,
-  `score_id` int NOT NULL
+CREATE TABLE `t_posseder` (
+  `fk_joueur_id` INT NOT NULL,
+  `fk_score_id` INT NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Déchargement des données de la table `posseder`
+-- Déchargement des données de la table `t_posseder`
 --
 
-INSERT INTO `posseder` (`joueur_id`, `score_id`) VALUES
+INSERT INTO `t_posseder` (`fk_joueur_id`, `fk_score_id`) VALUES
 (1, 1),
 (1, 2),
 (2, 3),
@@ -152,11 +152,11 @@ INSERT INTO `posseder` (`joueur_id`, `score_id`) VALUES
 --
 
 CREATE TABLE `t_ennemi` (
-  `ennemi_id` int NOT NULL,
-  `forme` varchar(20) NOT NULL,
-  `positionx` int NOT NULL,
-  `positiony` int NOT NULL,
-  `nbvie` varchar(50) DEFAULT NULL
+  `ennemi_id` INT NOT NULL,
+  `forme` VARCHAR(20) NOT NULL,
+  `positionx` INT NOT NULL,
+  `positiony` INT NOT NULL,
+  `nbvie` VARCHAR(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -184,16 +184,16 @@ INSERT INTO `t_ennemi` (`ennemi_id`, `forme`, `positionx`, `positiony`, `nbvie`)
 --
 
 CREATE TABLE `t_joueur` (
-  `joueur_id` int NOT NULL,
-  `nom` varchar(15) NOT NULL,
-  `niveau_id` int NOT NULL
+  `joueur_id` INT NOT NULL,
+  `nom` VARCHAR(15) NOT NULL,
+  `fk_niveau_id` INT NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `t_joueur`
 --
 
-INSERT INTO `t_joueur` (`joueur_id`, `nom`, `niveau_id`) VALUES
+INSERT INTO `t_joueur` (`joueur_id`, `nom`, `fk_niveau_id`) VALUES
 (1, 'Thomas Gonzalez', 1),
 (2, 'Jean-Michel Gui', 2);
 
@@ -204,11 +204,11 @@ INSERT INTO `t_joueur` (`joueur_id`, `nom`, `niveau_id`) VALUES
 --
 
 CREATE TABLE `t_missile` (
-  `missile_id` int NOT NULL,
-  `positionx` int NOT NULL,
-  `positiony` int NOT NULL,
-  `vitesse` int NOT NULL,
-  `etat` varchar(15) NOT NULL
+  `missile_id` INT NOT NULL,
+  `positionx` INT NOT NULL,
+  `positiony` INT NOT NULL,
+  `vitesse` INT NOT NULL,
+  `etat` VARCHAR(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -236,9 +236,9 @@ INSERT INTO `t_missile` (`missile_id`, `positionx`, `positiony`, `vitesse`, `eta
 --
 
 CREATE TABLE `t_niveau` (
-  `niveau_id` int NOT NULL,
-  `nivNom` varchar(20) NOT NULL,
-  `nivFacteurdifficulte` decimal(15,2) NOT NULL
+  `niveau_id` INT NOT NULL,
+  `nivNom` VARCHAR(20) NOT NULL,
+  `nivFacteurdifficulte` DECIMAL(15,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -257,10 +257,10 @@ INSERT INTO `t_niveau` (`niveau_id`, `nivNom`, `nivFacteurdifficulte`) VALUES
 --
 
 CREATE TABLE `t_obstacle` (
-  `obstacle_id` int NOT NULL,
-  `positionx` int NOT NULL,
-  `positiony` int NOT NULL,
-  `nbvie` int NOT NULL
+  `obstacle_id` INT NOT NULL,
+  `positionx` INT NOT NULL,
+  `positiony` INT NOT NULL,
+  `nbvie` INT NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -281,7 +281,7 @@ INSERT INTO `t_obstacle` (`obstacle_id`, `positionx`, `positiony`, `nbvie`) VALU
 --
 
 CREATE TABLE `t_partie` (
-  `partie_id` int NOT NULL
+  `partie_id` INT NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
@@ -307,12 +307,12 @@ INSERT INTO `t_partie` (`partie_id`) VALUES
 --
 
 CREATE TABLE `t_score` (
-  `score_id` int NOT NULL
+  `score_id` INT NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `t_score`
---
+-- 
 
 INSERT INTO `t_score` (`score_id`) VALUES
 (1),
@@ -324,17 +324,7 @@ INSERT INTO `t_score` (`score_id`) VALUES
 (7),
 (8),
 (9),
-(10),
-(100),
-(150),
-(200),
-(250),
-(300),
-(350),
-(400),
-(450),
-(500),
-(550);
+(10);
 
 -- --------------------------------------------------------
 
@@ -343,18 +333,18 @@ INSERT INTO `t_score` (`score_id`) VALUES
 --
 
 CREATE TABLE `t_vaisseau` (
-  `vaisseau_id` int NOT NULL,
-  `vitesse` int NOT NULL,
-  `forme` varchar(15) NOT NULL,
-  `nbvie` int NOT NULL,
-  `missile_id` int NOT NULL
+  `vaisseau_id` INT NOT NULL,
+  `vitesse` INT NOT NULL,
+  `forme` VARCHAR(15) NOT NULL,
+  `nbvie` INT NOT NULL,
+  `fk_missile_id` INT NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `t_vaisseau`
 --
 
-INSERT INTO `t_vaisseau` (`vaisseau_id`, `vitesse`, `forme`, `nbvie`, `missile_id`) VALUES
+INSERT INTO `t_vaisseau` (`vaisseau_id`, `vitesse`, `forme`, `nbvie`, `fk_missile_id`) VALUES
 (1, 5, 'Vaisseau1', 3, 1),
 (2, 5, 'Vaisseau2', 3, 2),
 (3, 5, 'Vaisseau3', 3, 3),
@@ -364,19 +354,19 @@ INSERT INTO `t_vaisseau` (`vaisseau_id`, `vitesse`, `forme`, `nbvie`, `missile_i
 -- --------------------------------------------------------
 
 --
--- Structure de la table `utiliser`
+-- Structure de la table `t_utiliser`
 --
 
-CREATE TABLE `utiliser` (
-  `vaisseau_id` int NOT NULL,
-  `partie_id` int NOT NULL
+CREATE TABLE `t_utiliser` (
+  `fk_vaisseau_id` INT NOT NULL,
+  `fk_partie_id` INT NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Déchargement des données de la table `utiliser`
+-- Déchargement des données de la table `t_utiliser`
 --
 
-INSERT INTO `utiliser` (`vaisseau_id`, `partie_id`) VALUES
+INSERT INTO `t_utiliser` (`fk_vaisseau_id`, `fk_partie_id`) VALUES
 (1, 1),
 (2, 1),
 (1, 2),
@@ -393,32 +383,32 @@ INSERT INTO `utiliser` (`vaisseau_id`, `partie_id`) VALUES
 --
 
 --
--- Index pour la table `avoir`
+-- Index pour la table `t_avoir`
 --
-ALTER TABLE `avoir`
-  ADD PRIMARY KEY (`ennemi_id`,`partie_id`),
-  ADD KEY `partie_id` (`partie_id`);
+ALTER TABLE `t_avoir`
+  ADD PRIMARY KEY (`fk_ennemi_id`,`fk_partie_id`),
+  ADD KEY `fk_partie_id` (`fk_partie_id`);
 
 --
--- Index pour la table `contenir`
+-- Index pour la table `t_contenir`
 --
-ALTER TABLE `contenir`
-  ADD PRIMARY KEY (`obstacle_id`,`partie_id`),
-  ADD KEY `partie_id` (`partie_id`);
+ALTER TABLE `t_contenir`
+  ADD PRIMARY KEY (`fk_obstacle_id`,`fk_partie_id`),
+  ADD KEY `fk_partie_id` (`fk_partie_id`);
 
 --
--- Index pour la table `jouer`
+-- Index pour la table `t_jouer`
 --
-ALTER TABLE `jouer`
+ALTER TABLE `t_jouer`
   ADD PRIMARY KEY (`joueur_id`,`partie_id`),
   ADD KEY `partie_id` (`partie_id`);
 
 --
--- Index pour la table `posseder`
+-- Index pour la table `t_posseder`
 --
-ALTER TABLE `posseder`
-  ADD PRIMARY KEY (`joueur_id`,`score_id`),
-  ADD KEY `score_id` (`score_id`);
+ALTER TABLE `t_posseder`
+  ADD PRIMARY KEY (`fk_joueur_id`,`fk_score_id`),
+  ADD KEY `fk_score_id` (`fk_score_id`);
 
 --
 -- Index pour la table `t_ennemi`
@@ -431,7 +421,7 @@ ALTER TABLE `t_ennemi`
 --
 ALTER TABLE `t_joueur`
   ADD PRIMARY KEY (`joueur_id`),
-  ADD KEY `niveau_id` (`niveau_id`);
+  ADD KEY `fk_niveau_id` (`fk_niveau_id`);
 
 --
 -- Index pour la table `t_missile`
@@ -468,14 +458,14 @@ ALTER TABLE `t_score`
 --
 ALTER TABLE `t_vaisseau`
   ADD PRIMARY KEY (`vaisseau_id`),
-  ADD KEY `missile_id` (`missile_id`);
+  ADD KEY `fk_missile_id` (`fk_missile_id`);
 
 --
--- Index pour la table `utiliser`
+-- Index pour la table `t_utiliser`
 --
-ALTER TABLE `utiliser`
-  ADD PRIMARY KEY (`vaisseau_id`,`partie_id`),
-  ADD KEY `partie_id` (`partie_id`);
+ALTER TABLE `t_utiliser`
+  ADD PRIMARY KEY (`fk_vaisseau_id`,`fk_partie_id`),
+  ADD KEY `fk_partie_id` (`fk_partie_id`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -485,100 +475,102 @@ ALTER TABLE `utiliser`
 -- AUTO_INCREMENT pour la table `t_ennemi`
 --
 ALTER TABLE `t_ennemi`
-  MODIFY `ennemi_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `ennemi_id` INT NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT pour la table `t_joueur`
 --
 ALTER TABLE `t_joueur`
-  MODIFY `joueur_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `joueur_id` INT NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `t_missile`
 --
 ALTER TABLE `t_missile`
-  MODIFY `missile_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `missile_id` INT NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT pour la table `t_niveau`
 --
 ALTER TABLE `t_niveau`
-  MODIFY `niveau_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `niveau_id` INT NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `t_obstacle`
 --
 ALTER TABLE `t_obstacle`
-  MODIFY `obstacle_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `obstacle_id` INT NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `t_partie`
 --
 ALTER TABLE `t_partie`
-  MODIFY `partie_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `partie_id` INT NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT pour la table `t_score`
 --
+-- Ajusté à 11 puisque le plus grand score_id conservé est 10
 ALTER TABLE `t_score`
-  MODIFY `score_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=551;
+  MODIFY `score_id` INT NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT pour la table `t_vaisseau`
 --
 ALTER TABLE `t_vaisseau`
-  MODIFY `vaisseau_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `vaisseau_id` INT NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Contraintes pour les tables déchargées
 --
 
 --
--- Contraintes pour la table `avoir`
+-- Contraintes pour la table `t_avoir`
 --
-ALTER TABLE `avoir`
-  ADD CONSTRAINT `avoir_ibfk_1` FOREIGN KEY (`ennemi_id`) REFERENCES `t_ennemi` (`ennemi_id`),
-  ADD CONSTRAINT `avoir_ibfk_2` FOREIGN KEY (`partie_id`) REFERENCES `t_partie` (`partie_id`);
+ALTER TABLE `t_avoir`
+  ADD CONSTRAINT `avoir_ibfk_1` FOREIGN KEY (`fk_ennemi_id`) REFERENCES `t_ennemi`(`ennemi_id`),
+  ADD CONSTRAINT `avoir_ibfk_2` FOREIGN KEY (`fk_partie_id`) REFERENCES `t_partie`(`partie_id`);
 
 --
--- Contraintes pour la table `contenir`
+-- Contraintes pour la table `t_contenir`
 --
-ALTER TABLE `contenir`
-  ADD CONSTRAINT `contenir_ibfk_1` FOREIGN KEY (`obstacle_id`) REFERENCES `t_obstacle` (`obstacle_id`),
-  ADD CONSTRAINT `contenir_ibfk_2` FOREIGN KEY (`partie_id`) REFERENCES `t_partie` (`partie_id`);
+ALTER TABLE `t_contenir`
+  ADD CONSTRAINT `contenir_ibfk_1` FOREIGN KEY (`fk_obstacle_id`) REFERENCES `t_obstacle`(`obstacle_id`),
+  ADD CONSTRAINT `contenir_ibfk_2` FOREIGN KEY (`fk_partie_id`) REFERENCES `t_partie`(`partie_id`);
 
 --
--- Contraintes pour la table `jouer`
+-- Contraintes pour la table `t_jouer`
 --
-ALTER TABLE `jouer`
-  ADD CONSTRAINT `jouer_ibfk_1` FOREIGN KEY (`joueur_id`) REFERENCES `t_joueur` (`joueur_id`),
-  ADD CONSTRAINT `jouer_ibfk_2` FOREIGN KEY (`partie_id`) REFERENCES `t_partie` (`partie_id`);
+ALTER TABLE `t_jouer`
+  ADD CONSTRAINT `jouer_ibfk_1` FOREIGN KEY (`joueur_id`) REFERENCES `t_joueur`(`joueur_id`),
+  ADD CONSTRAINT `jouer_ibfk_2` FOREIGN KEY (`partie_id`) REFERENCES `t_partie`(`partie_id`);
 
 --
--- Contraintes pour la table `posseder`
+-- Contraintes pour la table `t_posseder`
 --
-ALTER TABLE `posseder`
-  ADD CONSTRAINT `posseder_ibfk_1` FOREIGN KEY (`joueur_id`) REFERENCES `t_joueur` (`joueur_id`),
-  ADD CONSTRAINT `posseder_ibfk_2` FOREIGN KEY (`score_id`) REFERENCES `t_score` (`score_id`);
+ALTER TABLE `t_posseder`
+  ADD CONSTRAINT `posseder_ibfk_1` FOREIGN KEY (`fk_joueur_id`) REFERENCES `t_joueur`(`joueur_id`),
+  ADD CONSTRAINT `posseder_ibfk_2` FOREIGN KEY (`fk_score_id`) REFERENCES `t_score`(`score_id`);
 
 --
 -- Contraintes pour la table `t_joueur`
 --
 ALTER TABLE `t_joueur`
-  ADD CONSTRAINT `t_joueur_ibfk_1` FOREIGN KEY (`niveau_id`) REFERENCES `t_niveau` (`niveau_id`);
+  ADD CONSTRAINT `t_joueur_ibfk_1` FOREIGN KEY (`fk_niveau_id`) REFERENCES `t_niveau`(`niveau_id`);
 
 --
 -- Contraintes pour la table `t_vaisseau`
 --
 ALTER TABLE `t_vaisseau`
-  ADD CONSTRAINT `t_vaisseau_ibfk_1` FOREIGN KEY (`missile_id`) REFERENCES `t_missile` (`missile_id`);
+  ADD CONSTRAINT `t_vaisseau_ibfk_1` FOREIGN KEY (`fk_missile_id`) REFERENCES `t_missile`(`missile_id`);
 
 --
--- Contraintes pour la table `utiliser`
+-- Contraintes pour la table `t_utiliser`
 --
-ALTER TABLE `utiliser`
-  ADD CONSTRAINT `utiliser_ibfk_1` FOREIGN KEY (`vaisseau_id`) REFERENCES `t_vaisseau` (`vaisseau_id`),
-  ADD CONSTRAINT `utiliser_ibfk_2` FOREIGN KEY (`partie_id`) REFERENCES `t_partie` (`partie_id`);
+ALTER TABLE `t_utiliser`
+  ADD CONSTRAINT `utiliser_ibfk_1` FOREIGN KEY (`fk_vaisseau_id`) REFERENCES `t_vaisseau`(`vaisseau_id`),
+  ADD CONSTRAINT `utiliser_ibfk_2` FOREIGN KEY (`fk_partie_id`) REFERENCES `t_partie`(`partie_id`);
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
